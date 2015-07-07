@@ -1,0 +1,330 @@
+@charset "UTF-8";
+/*
+Theme Name: zrak-wp
+Theme URI: ╨┤╨╛╨╝╨░╤И╨╜╤П╤П-╤Б╤В╤А╨░╨╜╨╕╤Ж╨░-╤В╨╡╨╝╤Л
+Description: ╨в╨╡╨╝╨▓ wordpress
+Author: Dmitriy Rakov
+Author URI:
+Version: 1.0
+*/
+
+$colorYellow: #f5f5dc;
+$colorBrown: #7f6b4b;
+$colorWhite: #fff;
+$colorGrey: #f4f4f4;
+$colorDarkGrey: #ccc;
+$colorOrange: #ffa54c;
+$colorBlack: #000;
+
+@mixin border-radius($top-left, $top-right, $bottom-right, $bottom-left) {
+  -webkit-border-top-left-radius: $top-left;
+  -webkit-border-top-right-radius: $top-right;
+  -webkit-border-bottom-right-radius: $bottom-right;
+  -webkit-border-bottom-left-radius: $bottom-left;
+  -moz-border-radius-topleft: $top-left;
+  -moz-border-radius-topright: $top-right;
+  -moz-border-radius-bottomright: $bottom-right;
+  -moz-border-radius-bottomleft: $bottom-left;
+  border-radius: $top-left, $top-right, $bottom-right, $bottom-left;
+}
+
+/* Global properties */
+
+html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      /*height: 100%;*/
+      /*to push footer to the down border */
+}
+
+body {
+      /*min-height: 100%;
+      height: auto !important;
+      height: 100%;*/
+      /*to push footer to the down border */
+      position: relative;
+      background: $colorGrey;
+}
+
+p {
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+  font-family: 'Unna', serif;
+  font-size: 16px;
+  color: $colorBrown;
+  text-align: justify;
+}
+
+a {
+  color: $colorOrange;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend p;
+
+  a, a:hover {
+    color: $colorBrown;
+    text-decoration: none;
+  }
+
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.6em;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 1.4em;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  font-size: 1.2em;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+h6 {
+  font-size: 1.1em;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+table {
+  width: 100%;
+  margin: 15px 0;
+}
+
+td {
+  @extend p;
+
+  padding: 8px 15px;
+  border: 1px solid $colorDarkGrey;
+  color: $colorBlack;
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  @extend td;
+  background: $colorYellow;
+  font-weight: bold;
+}
+
+/*    Main Layout    */
+#wrapper-header {
+  width: 100%;
+  background: $colorYellow;
+  /*outline: 5px solid brown;*/
+}
+
+#wrapper-main {
+  width: 100%;
+  /*padding-bottom: 100px;*/
+  /*to push footer to the down border */
+/*  height:auto !important;
+  height:100%;
+  min-height:100%;
+  padding-bottom: -150px;
+*/
+  /*outline: 5px solid brown;*/
+}
+
+#wrapper-footer {
+  height: 100px;
+  width: 100%;
+  margin-top: 50px;
+
+  /*position: absolute;
+  bottom: 0;*/
+  /*to push footer to the down border */
+
+  /*background: $colorYellow;*/
+  /*outline: 5px solid brown;*/
+}
+
+
+#header {
+  width: 1030px;
+  margin: 0 auto;
+  /*outline: 5px solid blue;*/
+}
+
+#main {
+  width: 1030px;
+  margin: 0 auto;
+  border-left: 1px solid #ffe67c;
+  border-right: 1px solid #ffe67c;
+  border-top: 0px solid $colorOrange;
+  /*outline: 5px solid blue;*/
+}
+
+#content {
+  width: 990px;
+  padding: 0px 20px;
+  margin: 0;
+  background: url(images/fon.png) no-repeat bottom right;
+  /*outline: 6px solid green;*/
+}
+
+#footer {
+  width: 990px;
+  padding: 0px 20px;
+  margin: 0 auto;
+  padding: 0px 0px;
+  /*outline: 5px solid blue;*/
+}
+
+
+ /* Logo */
+
+.logo,
+.logo a,
+.logo a img {
+  float: left;
+  margin: 0;
+  padding: 5px 0 ;
+  line-height: 1;
+  font-size: 0px;
+  /*outline: 5px solid grey*/
+}
+
+ /* Search */
+
+.search {
+  float: right;
+  /*outline: 5px solid grey;*/
+}
+
+.searchform {
+  float: right;
+  margin: 20px 20px 0px 0px;
+  padding: 0;
+  font-size: 0px;
+}
+
+.searchform #s {
+  height: 20px;
+  width: 120px;
+  padding-left: 5px;
+  border: 1px solid $colorBrown;
+  @include border-radius(5px, 0, 0, 5px);
+  background: $colorGrey;
+  color: grey;
+  font-size: 16px;
+  vertical-align: bottom;
+  /*Important! for some browsers. For vertical alignment between search fiels and button*/
+}
+
+ .searchform #s:focus {
+  width: 240px;
+  border: 1px solid $colorBrown;
+  background: #fff;
+  outline: 0 none;
+  /*Delete border around search field, that automatically apears in some browsers when activated*/
+   }
+
+ .searchform #searchsubmit {
+  height: 24px;
+  width: 30px;
+  border: solid $colorBrown 1px;
+  @include border-radius(0, 5px, 5px, 0);
+  background: $colorBrown url("../zrak-wp/images/icons/icons.png") 5px -37px no-repeat;
+  color: #fff;
+  font-size: 16px;
+  vertical-align: bottom;
+  /*Important! for some browsers. For vertical alignment between search fiels and button*/
+ }
+
+ .searchform #searchsubmit:hover {
+  border: solid $colorOrange 1px;
+  background: $colorOrange url("../zrak-wp/images/icons/icons.png") 5px -37px no-repeat; }
+
+
+ /*Main horizontal menu*/
+
+ .main-menu {
+  background: $colorYellow;
+  /*outline: 5px solid green;*/
+ }
+
+.main-menu .menu ul {
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0px;
+  line-height: 1;
+  /*outline: 5px solid red;*/
+}
+
+.main-menu .menu li {
+  position: relative;
+  /*this property needs for positioning and alingment sub-menu (look below)*/
+  left: 0;
+  top: 0;
+  display: inline-block;
+  padding: 0;
+}
+
+ .main-menu .menu li a {
+  display: block;
+  margin-right: 0px;
+  padding: 8px 9px;
+  @include border-radius(12px, 12px, 0, 0);
+  color: $colorBrown;
+  background: $colorGrey;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;}
+
+ .main-menu .menu li:last-child a {
+  margin-right: 0px;
+ }
+
+ .main-menu .menu li a:hover {
+  color: $colorOrange;
+ }
+
+ .main-menu .menu li.current_page_item > a,
+ .main-menu .menu li.current-menu-parent > a {
+  color: $colorWhite;
+  background: $colorBrown;
+ }
+
+ .clearfix:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+
+.teachers {
+  td {
+    vertical-align: top;
+  }
+}
+/*# sourceMappingURL=style.css.map */
