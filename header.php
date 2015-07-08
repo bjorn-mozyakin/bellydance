@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
 <!-- Adding Google font to the site -->
 <link href='http://fonts.googleapis.com/css?family=Unna' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Josefin+Sans|Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
 <!--<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen,projection" />  -->
 
 <?php wp_head(); ?>

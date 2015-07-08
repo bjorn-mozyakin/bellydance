@@ -30,6 +30,53 @@ $colorBlack: #000;
 
 /* Global properties */
 
+@font-face {
+  font-family: "Lora";
+  src: url('fonts/Lora-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Nord";
+  src: url('fonts/Nord Regular.otf');
+}
+
+@font-face {
+  font-family: "Ropa";
+  src: url('fonts/RopaSansPTT-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Fira";
+  src: url('fonts/FiraSans-Regular.ttf');
+}
+
+
+@font-face {
+  font-family: "Tenor";
+  src: url('fonts/TenorSans-Regular.ttf');
+}
+
+
+@font-face {
+  font-family: "Indira";
+  src: url('fonts/indira_k.ttf');
+}
+
+@font-face {
+  font-family: "Kurale";
+  src: url('fonts/Kurale-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Rounded";
+  src: url('fonts/Rounded Elegance.ttf');
+}
+
+@font-face {
+  font-family: "Uni";
+  src: url('fonts/Uni Sans Thin.otf');
+}
+
 html {
       margin: 0;
       padding: 0;
@@ -45,14 +92,15 @@ body {
       /*to push footer to the down border */
       position: relative;
       background: $colorGrey;
+      font-family: 'Fira', Times, sans-serif;
+      //letter-spacing: 0.7px;
+      font-size: 16px;
+      color: $colorBlack;
 }
 
 p {
   margin-bottom: 0.5em;
   line-height: 1.5;
-  font-family: 'Unna', serif;
-  font-size: 16px;
-  color: $colorBrown;
   text-align: justify;
 }
 
@@ -67,9 +115,10 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @extend p;
 
   a, a:hover {
+  font-family: 'Kurale', serif;
+  letter-spacing: 0.6px;
     color: $colorBrown;
     text-decoration: none;
   }
@@ -77,39 +126,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2em;
-  margin-top: 0.3em;
-  margin-bottom: 0.5em;
+  font-size: 2rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
-  font-size: 1.8em;
-  margin-top: 0.3em;
-  margin-bottom: 0.5em;
+  font-size: 1.8rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 h3 {
-  font-size: 1.6em;
-  margin-top: 0.3em;
-  margin-bottom: 0.5em;
+  font-size: 1.6rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 h4 {
-  font-size: 1.4em;
-  margin-top: 0.3em;
-  margin-bottom: 0.5em;
+  font-size: 1.4rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 h5 {
-  font-size: 1.2em;
-  margin-top: 0.3em;
-  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 h6 {
-  font-size: 1.1em;
-  margin-top: 0.3em;
-  margin-bottom: 0.5em;
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 table {
@@ -265,9 +314,11 @@ th {
 
  /*Main horizontal menu*/
 
+//Tenor, Rounded
  .main-menu {
   background: $colorYellow;
   /*outline: 5px solid green;*/
+  font-family: "Tenor", Arial, sans-serif;
  }
 
 .main-menu .menu ul {
