@@ -13,11 +13,9 @@
 <!--<meta property="og:image" content="http://tamdaleko.ru/wp-content/themes/zrak-wp/images/logo-socnet.png" />-->
 
 <link rel="shortcut icon" type="image/png" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
 <!-- Adding Google font to the site -->
-<link href='http://fonts.googleapis.com/css?family=Unna' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Josefin+Sans|Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
 <!--<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen,projection" />  -->
 
 <?php wp_head(); ?>
@@ -29,24 +27,26 @@
 
 </head>
 <body>
+<div id="wrapper">
   <div id="wrapper-header">
-    <div id="header">
-      <div class = "clearfix">
+    <div id="header" class="clearfix">
+      <div class="logo-block clearfix">
         <div class="logo">
           <a href="<?php echo get_option('home'); ?>/">
             <img src="<?php bloginfo('template_url'); ?>/images/logo.png" title="На главную страницу сайта bellydance-samara.ru"
             alt="Обучение восточным танцам, танцам живота в Самаре." />
           </a>
         </div>
-        <div class=search>
+        <div class="title">Школа восточного танца</div>
+      </div>
+      <div class="info-block">
+        <div class="phone">Позвоните нам: <span>8-927-701-86-69</span></div>
+        <div class="search">
           <?php get_search_form(); ?>
         </div>
       </div>
- <!--
     </div>
- -->
-      <div class="main-menu clearfix">
-        <?php wp_nav_menu( array( 'theme_location' => 'top-pages-menu' ) ); ?>
-      </div>
-    </div>
+    <nav class="main-menu clearfix">
+      <?php wp_nav_menu( array( 'theme_location' => 'top-pages-menu' ) ); ?>
+    </nav>
   </div>

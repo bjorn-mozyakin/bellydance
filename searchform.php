@@ -1,6 +1,12 @@
-<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-  <div>
-    <input type="text" value="" name="s" id="s" placeholder="<?php the_search_query(); ?>" />
-    <input type="submit" id="searchsubmit" value="" />
-  </div>
+<form role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+    <input type="search" value="" name="s" placeholder="Поиск...">
+    <input type="submit" value="">
 </form>
+<!--
+
+<form role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+    <input type="search" name="" class="input" placeholder="Поиск...">
+    <input type="submit" name="" class="submit" value="">
+</form>
+<?php the_search_query(); ?>
+ -->

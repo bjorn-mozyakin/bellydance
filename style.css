@@ -48,14 +48,11 @@ body {
   height: 100%;*/
   /*to push footer to the down border */
   position: relative;
-  background: #f4f4f4;
   font-family: 'Fira', Times, sans-serif;
   font-size: 16px;
-  color: #000; }
+  color: #444444; }
 
 p, td, th {
-  margin-bottom: 0.5em;
-  line-height: 1.5;
   text-align: justify; }
 
 a {
@@ -66,41 +63,30 @@ a {
 a:hover {
   text-decoration: underline; }
 
-h1 a, h1 a:hover, h2 a, h2 a:hover, h3 a, h3 a:hover, h4 a, h4 a:hover, h5 a, h5 a:hover, h6 a, h6 a:hover {
-  font-family: 'Kurale', serif;
-  letter-spacing: 0.6px;
-  color: #7f6b4b;
-  text-decoration: none; }
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem; }
+  h1 a, h1 a:hover, h2 a, h2 a:hover, h3 a, h3 a:hover, h4 a, h4 a:hover, h5 a, h5 a:hover, h6 a, h6 a:hover {
+    font-family: 'Kurale', Times, serif;
+    letter-spacing: 0.6px; }
 
 h1 {
-  font-size: 2rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem; }
+  font-size: 2rem; }
 
 h2 {
-  font-size: 1.8rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem; }
+  font-size: 1.8rem; }
 
 h3 {
-  font-size: 1.6rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem; }
+  font-size: 1.6rem; }
 
 h4 {
-  font-size: 1.4rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem; }
+  font-size: 1.4rem; }
 
 h5 {
-  font-size: 1.2rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem; }
+  font-size: 1.2rem; }
 
 h6 {
-  font-size: 1.1rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem; }
+  font-size: 1.1rem; }
 
 table {
   width: 100%;
@@ -109,7 +95,7 @@ table {
 td, th {
   padding: 8px 15px;
   border: 1px solid #ccc;
-  color: #000;
+  color: #444444;
   text-align: center;
   vertical-align: middle; }
 
@@ -118,13 +104,15 @@ th {
   font-weight: bold; }
 
 /*    Main Layout    */
+#wrapper {
+  max-width: 1260px;
+  width: 95%;
+  margin: 0 auto; }
+
 #wrapper-header {
-  width: 100%;
-  background: #f5f5dc;
   /*outline: 5px solid brown;*/ }
 
 #wrapper-main {
-  width: 100%;
   /*padding-bottom: 100px;*/
   /*to push footer to the down border */
   /*  height:auto !important;
@@ -136,7 +124,6 @@ th {
 
 #wrapper-footer {
   height: 100px;
-  width: 100%;
   margin-top: 50px;
   /*position: absolute;
   bottom: 0;*/
@@ -144,159 +131,108 @@ th {
   /*background: $colorYellow;*/
   /*outline: 5px solid brown;*/ }
 
-#header {
-  width: 1030px;
-  margin: 0 auto;
-  /*outline: 5px solid blue;*/ }
-
 #main {
-  width: 1030px;
-  margin: 0 auto;
   border-left: 1px solid #ffe67c;
   border-right: 1px solid #ffe67c;
   border-top: 0px solid #ffa54c;
   /*outline: 5px solid blue;*/ }
 
 #content {
-  width: 990px;
   padding: 0px 20px;
   margin: 0;
-  background: url(images/fon.png) no-repeat bottom right;
-  /*outline: 6px solid green;*/ }
+  background: url(images/fon.png) no-repeat bottom right; }
 
 #footer {
-  width: 990px;
   padding: 0px 20px;
   margin: 0 auto;
   padding: 0px 0px;
   /*outline: 5px solid blue;*/ }
 
+/* Header-------------- */
+#header {
+  margin-top: 8px; }
+
 /* Logo */
-.logo,
-.logo a,
-.logo a img {
+.logo-block {
   float: left;
-  margin: 0;
-  padding: 5px 0;
-  line-height: 1;
-  font-size: 0px;
-  /*outline: 5px solid grey*/ }
+  position: relative; }
+  .logo-block .logo img {
+    display: block; }
+  .logo-block .title {
+    position: absolute;
+    left: 42px;
+    top: 90px;
+    font-family: "Kurale", Times, serif;
+    letter-spacing: 1.2px;
+    font-weight: bold; }
 
-/* Search */
-.search {
+.info-block {
   float: right;
-  /*outline: 5px solid grey;*/ }
+  position: relative; }
+  .info-block .phone {
+    font-size: 1.4rem;
+    font-weight: bold; }
+    .info-block .phone span {
+      padding-left: 20px;
+      font-size: 1.6rem; }
+  .info-block .search {
+    float: right; }
+    .info-block .search .searchform {
+      margin-top: 40px;
+      border-radius: 5px;
+      font-size: 0;
+      box-shadow: 0 0 8px silver; }
+      .info-block .search .searchform input[type="search"] {
+        box-sizing: border-box;
+        height: 30px;
+        width: 140px;
+        padding-left: 6px;
+        border: 1px solid #444444;
+        border-radius: 5px 0 0 5px;
+        font-size: 1rem;
+        color: #444444;
+        background: #f4f4f4;
+        transition: width 1s, background 1s; }
+      .info-block .search .searchform input[type="search"]:focus {
+        width: 240px;
+        background: #fff;
+        outline: 0 none; }
+      .info-block .search .searchform input[type="submit"] {
+        box-sizing: border-box;
+        height: 30px;
+        width: 30px;
+        border: 1px solid #444444;
+        border-radius: 0 5px 5px 0;
+        color: #fff;
+        background: #444444 url(images/icons/search.png) 5px 5px no-repeat;
+        vertical-align: top; }
 
-.searchform {
-  float: right;
-  margin: 20px 20px 0px 0px;
-  padding: 0;
-  font-size: 0px; }
-
-.searchform #s {
-  height: 20px;
-  width: 120px;
-  padding-left: 5px;
-  border: 1px solid #7f6b4b;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 0;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 5px;
-  border-radius: 5px, 0, 0, 5px;
-  background: #f4f4f4;
-  color: grey;
-  font-size: 16px;
-  vertical-align: bottom;
-  /*Important! for some browsers. For vertical alignment between search fiels and button*/ }
-
-.searchform #s:focus {
-  width: 240px;
-  border: 1px solid #7f6b4b;
-  background: #fff;
-  outline: 0 none;
-  /*Delete border around search field, that automatically apears in some browsers when activated*/ }
-
-.searchform #searchsubmit {
-  height: 24px;
-  width: 30px;
-  border: solid #7f6b4b 1px;
-  -webkit-border-top-left-radius: 0;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 0;
-  -moz-border-radius-topleft: 0;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 0;
-  border-radius: 0, 5px, 5px, 0;
-  background: #7f6b4b url("../zrak-wp/images/icons/icons.png") 5px -37px no-repeat;
-  color: #fff;
-  font-size: 16px;
-  vertical-align: bottom;
-  /*Important! for some browsers. For vertical alignment between search fiels and button*/ }
-
-.searchform #searchsubmit:hover {
-  border: solid #ffa54c 1px;
-  background: #ffa54c url("../zrak-wp/images/icons/icons.png") 5px -37px no-repeat; }
-
-/*Main horizontal menu*/
+/* Main horizontal menu-------- */
 .main-menu {
-  background: #f5f5dc;
-  /*outline: 5px solid green;*/
-  font-family: "Tenor", Arial, sans-serif; }
-
-.main-menu .menu ul {
-  float: left;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0px;
-  line-height: 1;
-  /*outline: 5px solid red;*/ }
-
-.main-menu .menu li {
-  position: relative;
-  /*this property needs for positioning and alingment sub-menu (look below)*/
-  left: 0;
-  top: 0;
-  display: inline-block;
-  padding: 0; }
-
-.main-menu .menu li a {
-  display: block;
-  margin-right: 0px;
-  padding: 8px 9px;
-  -webkit-border-top-left-radius: 12px;
-  -webkit-border-top-right-radius: 12px;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 0;
-  -moz-border-radius-topleft: 12px;
-  -moz-border-radius-topright: 12px;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 0;
-  border-radius: 12px, 12px, 0, 0;
-  color: #7f6b4b;
-  background: #f4f4f4;
-  font-size: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: 1;
-  text-decoration: none; }
-
-.main-menu .menu li:last-child a {
-  margin-right: 0px; }
-
-.main-menu .menu li a:hover {
-  color: #ffa54c; }
-
-.main-menu .menu li.current_page_item > a,
-.main-menu .menu li.current-menu-parent > a {
-  color: #fff;
-  background: #7f6b4b; }
+  font-family: "Tenor", Arial, sans-serif;
+  width: 100%;
+  margin: 20px 0; }
+  .main-menu ul {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    margin: 0;
+    padding: 0 30px;
+    list-style: none; }
+    .main-menu ul li.current_page_item a {
+      border-bottom: 2px solid #444444; }
+    .main-menu ul li {
+      flex-grow: 1;
+      -webkit-flex-grow: 1;
+      -ms-flex-grow: 1; }
+      .main-menu ul li a {
+        padding-bottom: 3px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #444444; }
+      .main-menu ul li a:hover {
+        border-bottom: 2px solid #444444; }
 
 .clearfix:after {
   content: '';
