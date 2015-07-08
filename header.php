@@ -28,25 +28,24 @@
 </head>
 <body>
 <div id="wrapper">
-  <div id="wrapper-header">
-    <div id="header" class="clearfix">
-      <div class="logo-block clearfix">
-        <div class="logo">
-          <a href="<?php echo get_option('home'); ?>/">
-            <img src="<?php bloginfo('template_url'); ?>/images/logo.png" title="На главную страницу сайта bellydance-samara.ru"
-            alt="Обучение восточным танцам, танцам живота в Самаре." />
-          </a>
-        </div>
-        <div class="title">Школа восточного танца</div>
+  <header id="header" class="clearfix">
+    <div class="logo-block clearfix">
+      <div class="logo">
+        <a href="<?php echo get_option('home'); ?>/">
+          <img src="<?php bloginfo('template_url'); ?>/images/logo.png" title="На главную страницу сайта bellydance-samara.ru"
+          alt="Обучение восточным танцам, танцам живота в Самаре." />
+        </a>
       </div>
-      <div class="info-block">
-        <div class="phone">Позвоните нам: <span>8-927-701-86-69</span></div>
-        <div class="search">
-          <?php get_search_form(); ?>
-        </div>
+      <div class="title">Школа восточного танца</div>
+    </div>
+    <div class="info-block">
+      <div class="phone">Позвоните нам: <span>8-927-701-86-69</span></div>
+      <div class="search">
+        <?php get_search_form(); ?>
       </div>
     </div>
-    <nav class="main-menu clearfix">
-      <?php wp_nav_menu( array( 'theme_location' => 'top-pages-menu' ) ); ?>
-    </nav>
-  </div>
+  </header>
+
+  <nav class="main-menu clearfix">
+    <?php wp_nav_menu( array( 'theme_location' => 'top-pages-menu' ) ); ?>
+  </nav>

@@ -8,27 +8,6 @@ Author URI:
 Version: 1.0
 */
 
-$colorYellow: #f5f5dc;
-$colorBrown: #7f6b4b;
-$colorWhite: #fff;
-$colorGrey: #f4f4f4;
-$colorDarkGrey: #ccc;
-$colorOrange: #ffa54c;
-$colorBlack: #444444;
-
-@mixin border-radius($top-left, $top-right, $bottom-right, $bottom-left) {
-  -webkit-border-top-left-radius: $top-left;
-  -webkit-border-top-right-radius: $top-right;
-  -webkit-border-bottom-right-radius: $bottom-right;
-  -webkit-border-bottom-left-radius: $bottom-left;
-  -moz-border-radius-topleft: $top-left;
-  -moz-border-radius-topright: $top-right;
-  -moz-border-radius-bottomright: $bottom-right;
-  -moz-border-radius-bottomleft: $bottom-left;
-  border-radius: $top-left, $top-right, $bottom-right, $bottom-left;
-}
-
-/* Global properties */
 
 @font-face {
   font-family: "Lora";
@@ -75,25 +54,71 @@ $colorBlack: #444444;
   src: url('fonts/Uni Sans Thin.otf');
 }
 
+
+$colorYellow: #f5f5dc;
+$colorBrown: #7f6b4b;
+$colorWhite: #fff;
+$colorGray: #f4f4f4;
+$colorDarkGray: #ccc;
+$colorOrange: #ffa54c;
+$colorBlack: #444444;
+
+/*    Main Layout    */
+#wrapper {
+  position: relative;
+  max-width: 1260px;
+  width: 95%;
+  min-height: 100%;
+  margin: 0 auto;
+  //outline: 1px solid red;
+}
+
+#wrapper-header {
+}
+
+#wrapper-main {
+}
+
+#wrapper-footer {
+}
+
+#header {
+  padding-top: 8px;
+}
+
+#main {
+}
+
+#content {
+  padding: 0px 30px 90px 30px;
+  background: url(images/fon.png) no-repeat bottom right;
+  //outline: 1px solid aqua;
+}
+
+#footer {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 80px;
+  padding: 0px 30px;
+  //outline: 1px solid blue;
+}
+
+/* Global properties */
 html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      /*height: 100%;*/
-      /*to push footer to the down border */
+  height: 100%; /*to push footer to the down border */
 }
 
 body {
-      /*min-height: 100%;
-      height: auto !important;
-      height: 100%;*/
-      /*to push footer to the down border */
-      position: relative;
-      //background: $colorGrey;
-      font-family: 'Fira', Times, sans-serif;
-      //letter-spacing: 0.7px;
-      font-size: 16px;
-      color: $colorBlack;
+  position: relative;
+  height: 100%; /*to push footer to the down border */
+  font-family: 'Fira', Times, sans-serif;
+  font-size: 16px;
+  color: $colorBlack;
+  background: linear-gradient(to left, #F3F3F3, $colorWhite 5%, $colorWhite 95%, #F3F3F3);
+  //background: linear-gradient(to left, $colorDarkGray, $colorWhite 2.5%,$colorWhite 97.5%, $colorDarkGray);
 }
 
 p {
@@ -111,12 +136,17 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  display: block;
+  text-align: center;
   margin-top: 0.3rem;
   margin-bottom: 0.5rem;
+  font-family: 'Kurale', Times, serif;
+  letter-spacing: 0.6px;
 
   a, a:hover {
-    font-family: 'Kurale', Times, serif;
-    letter-spacing: 0.6px;
+    //font-weight: none;
+    color: $colorBlack;
+    text-decoration: none;
   }
 
 }
@@ -146,89 +176,89 @@ h6 {
 }
 
 table {
+  //display: block;
   width: 100%;
   margin: 15px 0;
-}
+  border-radius: 10px;
+  border: 0.5px solid $colorDarkGray;
+  background: $colorDarkGray;
+  border-collapse: separate;
+  border-spacing: 2px;
+  //outline: 1px solid green;
 
-td {
-  @extend p;
+  th {
+    padding: 8px 15px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    background: $colorGray;
+  }
 
-  padding: 8px 15px;
-  border: 1px solid $colorDarkGrey;
-  color: $colorBlack;
-  text-align: center;
-  vertical-align: middle;
-}
+  td {
+    padding: 8px 15px;
+    text-align: center;
+    vertical-align: middle;
+    background: $colorWhite;
+      //outline: 1px solid red;
+  }
 
-th {
-  @extend td;
-  background: $colorYellow;
-  font-weight: bold;
-}
+  &.title-top {
+    tr:first-child th:first-child {
+      border-top-left-radius: 10px;
+    }
 
-/*    Main Layout    */
-#wrapper {
-  max-width: 1260px;
-  width: 95%;
-  margin: 0 auto;
-  //outline: 1px solid red;
-}
+    tr:first-child th:last-child {
+      border-top-right-radius: 10px;
+    }
 
-#wrapper-header {
-  /*outline: 5px solid brown;*/
-}
+    tr:last-child td:first-child {
+      border-bottom-left-radius: 10px;
+    }
 
-#wrapper-main {
-  /*padding-bottom: 100px;*/
-  /*to push footer to the down border */
-/*  height:auto !important;
-  height:100%;
-  min-height:100%;
-  padding-bottom: -150px;
-*/
-  /*outline: 5px solid brown;*/
-}
+    tr:last-child td:last-child {
+      border-bottom-right-radius: 10px;
+    }
+  }
 
-#wrapper-footer {
-  height: 100px;
-  margin-top: 50px;
+  &.title-left {
+    tr:first-child th:first-child {
+      border-top-left-radius: 10px;
+    }
 
-  /*position: absolute;
-  bottom: 0;*/
-  /*to push footer to the down border */
+    tr:first-child td:last-child {
+      border-top-right-radius: 10px;
+    }
 
-  /*background: $colorYellow;*/
-  /*outline: 5px solid brown;*/
-}
+    tr:last-child th:first-child {
+      border-bottom-left-radius: 10px;
+    }
 
-#main {
-  border-left: 1px solid #ffe67c;
-  border-right: 1px solid #ffe67c;
-  border-top: 0px solid $colorOrange;
-  /*outline: 5px solid blue;*/
-}
+    tr:last-child td:last-child {
+      border-bottom-right-radius: 10px;
+    }
+  }
 
-#content {
-  padding: 0px 20px;
-  margin: 0;
-  background: url(images/fon.png) no-repeat bottom right;
-  //outline: 6px solid aqua;
-}
+  &.title-none {
+    tr:first-child td:first-child {
+      border-top-left-radius: 10px;
+    }
 
-#footer {
-  padding: 0px 20px;
-  margin: 0 auto;
-  padding: 0px 0px;
-  /*outline: 5px solid blue;*/
+    tr:first-child td:last-child {
+      border-top-right-radius: 10px;
+    }
+
+    tr:last-child td:first-child {
+      border-bottom-left-radius: 10px;
+    }
+
+    tr:last-child td:last-child {
+      border-bottom-right-radius: 10px;
+    }
+  }
 }
 
 /* Header-------------- */
 
-#header {
-  margin-top: 8px;
-  //background: $colorYellow;
-  //outline: 3px solid blue;
-}
 
 /* Logo */
 .logo-block {
@@ -288,7 +318,7 @@ th {
         border-radius: 5px 0 0 5px;
         font-size: 1rem;
         color: $colorBlack;
-        background: $colorGrey;
+        background: $colorGray;
         transition: width 1s, background 1s;
       }
 
@@ -322,7 +352,7 @@ th {
 .main-menu {
   font-family: "Tenor", Arial, sans-serif;
   width: 100%;
-  margin: 20px 0;
+  margin: 30px 0 20px 0;
   //outline: 1px solid green;
 
   ul {
@@ -352,7 +382,7 @@ th {
         text-transform: uppercase;
         text-decoration: none;
         color: $colorBlack;
-      //outline: 1px solid lime;
+        //outline: 1px solid lime;
       }
       a:hover {
         border-bottom: 2px solid $colorBlack;
@@ -379,4 +409,4 @@ th {
     vertical-align: top;
   }
 }
-/*# sourceMappingURL=style.css.map */
+  /*# sourceMappingURL=style.css.map */

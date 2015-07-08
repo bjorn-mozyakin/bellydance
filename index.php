@@ -8,6 +8,10 @@ Template Name: zrak-wp
 <div id="wrapper-main">
   <div id="main" class="clearfix">
     <div id="content">
+      <div class="article-brief clearfix">
+        <div class="article-thumbnail"><?php the_post_thumbnail(); ?></div>
+        <?php the_content(); ?>
+      </div>
 
 <!--       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
@@ -17,10 +21,6 @@ Template Name: zrak-wp
       <!--<?php the_excerpt(); ?>-->
 
 
-      <div class="article-brief clearfix">
-  <div class="article-thumbnail"><?php the_post_thumbnail(); ?></div>
-  <?php the_content(); ?>
-</div>
 
 <!--       <p class="tags"><?php the_tags(); ?></p>
       <p><a href="<?php the_permalink() ?>">Узнать, что было дальше</a></p>
