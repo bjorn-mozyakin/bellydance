@@ -49,29 +49,54 @@ Version: 1.0
   padding: 0px 30px 90px 30px;
   background: url(images/fon.png) no-repeat bottom right; }
 
-#sidebar-primary {
+.sidebar-primary {
   float: right;
-  width: 350px;
-  margin-left: 20px; }
-  #sidebar-primary ul {
+  width: 300px; }
+  .sidebar-primary ul {
     margin: 0;
     padding: 0;
     list-style-type: none; }
-    #sidebar-primary ul li.widget {
+    .sidebar-primary ul li.widget {
       margin-bottom: 20px;
-      padding: 10px 20px;
+      padding: 0 20px 10px 20px;
       border: 1px solid #ccc;
       border-radius: 7px;
       background: #f4f4f4;
       box-shadow: 0 0 8px silver; }
-      #sidebar-primary ul li.widget ul {
+      .sidebar-primary ul li.widget ul {
         background: #fff;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 10px; }
-    #sidebar-primary ul p {
-      margin: 0;
-      padding: 0; }
+        .sidebar-primary ul li.widget ul a, .sidebar-primary ul li.widget ul a:hover {
+          color: #444444; }
+        .sidebar-primary ul li.widget ul .more-link {
+          display: block;
+          margin-top: 20px; }
+
+.sidebar-news-on-main-page {
+  margin-right: 300px; }
+  .sidebar-news-on-main-page ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    .sidebar-news-on-main-page ul li.widget ul {
+      width: 100%;
+      font-size: 0; }
+      .sidebar-news-on-main-page ul li.widget ul li {
+        box-sizing: border-box;
+        float: left;
+        margin-right: 5%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 7px;
+        width: 30%;
+        font-size: 1rem; }
+        .sidebar-news-on-main-page ul li.widget ul li:last-child {
+          margin-right: 0; }
+
+.hello {
+  margin-right: 300px; }
 
 #footer {
   box-sizing: border-box;
@@ -246,21 +271,22 @@ table {
     display: -ms-flex;
     display: -webkit-flex;
     margin: 0;
-    padding: 0 30px;
+    padding: 0 20px;
     list-style: none; }
     .main-menu ul li.current_page_item a {
       border-bottom: 2px solid #444444; }
-    .main-menu ul li {
+    .main-menu ul li, .main-menu ul li:last-child {
       flex-grow: 1;
       -webkit-flex-grow: 1;
-      -ms-flex-grow: 1; }
-      .main-menu ul li a {
+      -ms-flex-grow: 1;
+      text-align: center; }
+      .main-menu ul li a, .main-menu ul li:last-child a {
         padding-bottom: 3px;
         font-size: 1rem;
         text-transform: uppercase;
         text-decoration: none;
         color: #444444; }
-      .main-menu ul li a:hover {
+      .main-menu ul li a:hover, .main-menu ul li:last-child a:hover {
         border-bottom: 2px solid #444444; }
 
 .clearfix:after {

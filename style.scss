@@ -86,19 +86,18 @@ $colorBlack: #444444;
   padding-top: 8px;
 }
 
-#main {
-}
-
 #content {
+  // float: left;
+  // width: 65%;
   padding: 0px 30px 90px 30px;
   background: url(images/fon.png) no-repeat bottom right;
   //outline: 1px solid aqua;
 }
 
-#sidebar-primary {
+.sidebar-primary {
   float: right;
-  width: 350px;
-  margin-left: 20px;
+  width: 300px;
+  //outline: 1px solid maroon;
 
   ul {
     margin: 0;
@@ -107,7 +106,7 @@ $colorBlack: #444444;
 
     li.widget {
       margin-bottom: 20px;
-      padding: 10px 20px;
+      padding: 0 20px 10px 20px;
       border: 1px solid $colorDarkGray;
       border-radius: 7px;
       background: $colorGray;
@@ -118,16 +117,66 @@ $colorBlack: #444444;
         padding: 10px;
         border: 1px solid $colorDarkGray;
         border-radius: 10px;
+        li p {
+
+        }
+        a, a:hover {
+          color: $colorBlack;
+        }
+
+        .more-link {
+          display: block;
+          margin-top: 20px;
+        }
       }
     }
 
     p {
-      margin: 0;
-      padding: 0;
+      //margin: 0;
+      //padding: 0;
       //margin-top: 0.2rem;
       //margin-bottom: 0.2rem;
     }
   }
+}
+
+.sidebar-news-on-main-page {
+  //outline: 1px solid red;
+  margin-right: 300px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li.widget {
+
+      ul {
+        width: 100%;
+        //outline: 1px solid green;
+        font-size: 0;
+
+        li{
+          box-sizing: border-box;
+          float: left;
+          margin-right: 5%;
+          padding: 10px;
+          border: 1px solid $colorDarkGray;
+          border-radius: 7px;
+          width: 30%;
+          font-size: 1rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hello {
+  margin-right: 300px;
 }
 
 #footer {
@@ -395,9 +444,9 @@ table {
     display: -ms-flex;
     display: -webkit-flex;
     margin: 0;
-    padding: 0 30px;
+    padding: 0 20px;
     list-style: none;
-    //outline: 1px solid red;
+    //outline: 2px solid red;
 
     li.current_page_item {
       a {
@@ -405,11 +454,12 @@ table {
       }
     }
 
-    li {
+    li, li:last-child {
       flex-grow: 1;
       -webkit-flex-grow: 1;
       -ms-flex-grow: 1;
-
+        //border: 3px solid orange;
+        text-align: center;
       a {
         //padding: 0 10px;
         padding-bottom: 3px;

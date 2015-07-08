@@ -13,7 +13,7 @@ function register_nav_menus_on_init() {
 
 if (function_exists('register_sidebar'))
 register_sidebar(array('name' => 'primary')); //регистрируем сайдбар
-//register_sidebar(array('name' => 'secondary')); //регистрируем еще один сайдбар
+register_sidebar(array('name' => 'news-on-main-page')); //регистрируем еще один сайдбар
 
 add_theme_support('post-thumbnails'); //добавляем поддержку миниатюр для каждого поста
 set_post_thumbnail_size(200, '', false); //определяем размер миниатюры и то как ее сжимать: пропорционально - false, или с обрезанием по центру - true

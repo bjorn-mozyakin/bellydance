@@ -37,7 +37,7 @@ Template Name: zrak-wp
         <p><?php the_post_thumbnail(); ?></p>
         <?php the_content(); ?>
         <p class="tags"><?php the_tags(); ?></p>
-        <p><a href="<?php the_permalink() ?>">Узнать, что было дальше</a></p>
+        <p><a href="<?php the_permalink() ?>">Читать дальше</a></p>
         <hr />
       <?php endwhile; else: ?>
         <h2 class="title-style">Не найдено ни одного материала.</h2>
@@ -46,8 +46,6 @@ Template Name: zrak-wp
         <?php posts_nav_link(); ?>
       </div>
     </div>
-    <?php get_sidebar('primary'); ?>
-    <!--<?php get_sidebar('secondary'); ?>-->
   </div>
 </div>
 <?php get_footer(); ?>
