@@ -95,6 +95,41 @@ $colorBlack: #444444;
   //outline: 1px solid aqua;
 }
 
+#sidebar-primary {
+  float: right;
+  width: 350px;
+  margin-left: 20px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li.widget {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      border: 1px solid $colorDarkGray;
+      border-radius: 7px;
+      background: $colorGray;
+      box-shadow: 0 0 8px silver;
+
+      ul {
+        background: $colorWhite;
+        padding: 10px;
+        border: 1px solid $colorDarkGray;
+        border-radius: 10px;
+      }
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+      //margin-top: 0.2rem;
+      //margin-bottom: 0.2rem;
+    }
+  }
+}
+
 #footer {
   box-sizing: border-box;
   position: absolute;
@@ -139,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   text-align: center;
   margin-top: 0.3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   font-family: 'Kurale', Times, serif;
   letter-spacing: 0.6px;
 
@@ -152,19 +187,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2rem;
-}
-
-h2 {
   font-size: 1.8rem;
 }
 
-h3 {
+h2 {
   font-size: 1.6rem;
 }
 
-h4 {
+h3 {
   font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.3rem;
 }
 
 h5 {
@@ -352,7 +387,7 @@ table {
 .main-menu {
   font-family: "Tenor", Arial, sans-serif;
   width: 100%;
-  margin: 30px 0 20px 0;
+  margin: 30px 0 30px 0;
   //outline: 1px solid green;
 
   ul {

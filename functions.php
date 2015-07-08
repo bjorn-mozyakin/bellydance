@@ -9,6 +9,8 @@ function register_nav_menus_on_init() {
 	));
 }
 
+
+
 if (function_exists('register_sidebar'))
 register_sidebar(array('name' => 'primary')); //регистрируем сайдбар
 //register_sidebar(array('name' => 'secondary')); //регистрируем еще один сайдбар

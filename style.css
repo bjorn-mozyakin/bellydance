@@ -49,6 +49,30 @@ Version: 1.0
   padding: 0px 30px 90px 30px;
   background: url(images/fon.png) no-repeat bottom right; }
 
+#sidebar-primary {
+  float: right;
+  width: 350px;
+  margin-left: 20px; }
+  #sidebar-primary ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    #sidebar-primary ul li.widget {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      background: #f4f4f4;
+      box-shadow: 0 0 8px silver; }
+      #sidebar-primary ul li.widget ul {
+        background: #fff;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px; }
+    #sidebar-primary ul p {
+      margin: 0;
+      padding: 0; }
+
 #footer {
   box-sizing: border-box;
   position: absolute;
@@ -87,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   text-align: center;
   margin-top: 0.3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   font-family: 'Kurale', Times, serif;
   letter-spacing: 0.6px; }
   h1 a, h1 a:hover, h2 a, h2 a:hover, h3 a, h3 a:hover, h4 a, h4 a:hover, h5 a, h5 a:hover, h6 a, h6 a:hover {
@@ -95,16 +119,16 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none; }
 
 h1 {
-  font-size: 2rem; }
-
-h2 {
   font-size: 1.8rem; }
 
-h3 {
+h2 {
   font-size: 1.6rem; }
 
-h4 {
+h3 {
   font-size: 1.4rem; }
+
+h4 {
+  font-size: 1.3rem; }
 
 h5 {
   font-size: 1.2rem; }
@@ -216,7 +240,7 @@ table {
 .main-menu {
   font-family: "Tenor", Arial, sans-serif;
   width: 100%;
-  margin: 30px 0 20px 0; }
+  margin: 30px 0 30px 0; }
   .main-menu ul {
     display: flex;
     display: -ms-flex;
