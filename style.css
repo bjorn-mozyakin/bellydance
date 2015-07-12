@@ -298,15 +298,25 @@ table {
   Pages
 */
 /* Page Teachers (Преподаватели) */
-.teachers td {
-  vertical-align: top;
-  text-align: justify; }
-.teachers img {
-  border-radius: 7px; }
+.teacher {
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #cccccc; }
+  .teacher:last-child {
+    border: none; }
+  .teacher:after {
+    content: "";
+    clear: both;
+    display: block; }
+  .teacher .teacher-photo {
+    float: left; }
+    .teacher .teacher-photo img {
+      border-radius: 5px; }
+  .teacher .teacher-description {
+    margin-left: 220px; }
 
 .gallery {
-  width: 100%;
-  clear: both; }
+  width: 100%; }
   .gallery a {
     float: left;
     position: relative;
