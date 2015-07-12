@@ -6,7 +6,7 @@ Template Name: zrak-wp
 <?php get_header(); ?>
 <div id="wrapper-main">
   <div id="main" class="clearfix">
-    <div id="content">
+    <div id="content" class="clearfix">
       <?php if ( have_posts() ) : ?>
         <h1 class="title-style"><?php
           if ( is_category() ) {

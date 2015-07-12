@@ -286,6 +286,22 @@ table {
       //outline: 1px solid red;
   }
 
+  .lt-round{
+    border-top-left-radius: 10px;
+  }
+
+  .rt-round{
+    border-top-right-radius: 10px;
+  }
+
+  .lb-round{
+    border-bottom-left-radius: 10px;
+  }
+
+  .rb-round {
+    border-bottom-right-radius: 10px;
+  }
+
   &.title-top {
     tr:first-child th:first-child {
       border-top-left-radius: 10px;
@@ -296,24 +312,6 @@ table {
     }
 
     tr:last-child td:first-child {
-      border-bottom-left-radius: 10px;
-    }
-
-    tr:last-child td:last-child {
-      border-bottom-right-radius: 10px;
-    }
-  }
-
-  &.title-left {
-    tr:first-child th:first-child {
-      border-top-left-radius: 10px;
-    }
-
-    tr:first-child td:last-child {
-      border-top-right-radius: 10px;
-    }
-
-    tr:last-child th:first-child {
       border-bottom-left-radius: 10px;
     }
 
@@ -339,6 +337,30 @@ table {
       border-bottom-right-radius: 10px;
     }
   }
+}
+
+
+hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 5px double $colorDarkGray;
+  color: #colorDarkGray;
+  text-align: center;
+}
+
+hr:after {
+  content: "§";
+  position: relative;
+  top: -1rem;
+  font-size: 1.5rem;
+  padding: 0 0.25rem;
+  color: $colorDarkGray;
+  background: white;
+}
+
+.more-link {
+  display: none;
+  /*Delete excess link, that appears if you usie tag MORE in post*/
 }
 
 /* Header-------------- */
@@ -486,8 +508,8 @@ table {
  .clearfix:after {
   content: '';
   display: table;
-  clear: both; }
-
+  clear: both;
+}
 
 /*
   Pages
@@ -623,6 +645,14 @@ table {
 
 .arrow-right:hover {
   background: url(images/icons/arrow-right-hover.png);
+}
+
+/* Page Reviewes (Отзывы)*/
+.reviewes p {
+  padding: 10px;
+  border-radius: 7px;
+  background: $colorGray;
+  //outline: 1px solid red;
 }
 
   /*# sourceMappingURL=style.css.map */
