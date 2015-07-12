@@ -19,6 +19,15 @@ function handler() {
   document.addEventListener("keydown", hideImgEsc);
 
 
+  window.onresize = function() {
+    if (!document.querySelector('.fogging')) return;
+
+    var largeImg = document.querySelector('.large-img');
+    var leftArrow = document.querySelector('.arrow-left');
+    var rightArrow = document.querySelector('.arrow-right');
+
+    leftArrow.style.marginTop = rightArrow.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(leftArrow).height) - 10 + 'px';
+  }
 
   function showImg(e) {
     e = e || window.event;
@@ -28,22 +37,36 @@ function handler() {
 
     document.body.insertAdjacentHTML('beforeEnd', '<div class="fogging"></div>');
     var href = target.getAttribute('href');
-    var str = '<img class="large-img" src="' + href + '"><div class="arrow-left"></div><div class="arrow-right"></div>';
+    var str = ' \
+    <div class="container-wrapper"> \
+      <img class="large-img" src="' + href + '"> \
+    </div>';
     document.body.insertAdjacentHTML('beforeEnd', str);
 
     e.preventDefault();
 
     var imgCount = target.parentNode.querySelectorAll('a').length;
 
+    var largeImg = document.querySelector('.large-img');
+
+    var str = '<div class="arrow-left"></div><div class="arrow-right"></div>';
+    document.body.insertAdjacentHTML('beforeEnd' , str);
+
+    var leftArrow = document.querySelector('.arrow-left');
+    var rightArrow = document.querySelector('.arrow-right');
+    leftArrow.style.display = rightArrow.style.display = "none";
+
+    largeImg.onload = function() {
+      leftArrow.style.display = rightArrow.style.display = "";
+      leftArrow.style.marginTop = rightArrow.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(leftArrow).height) - 10 + 'px';
+    }
+
     var arrowLeft = document.querySelector('.arrow-left');
     arrowLeft.addEventListener("click", prevImg);
 
     var arrowRight = document.querySelector('.arrow-right');
 
-    (function(imgCount) {
-      arrowRight.addEventListener("click", nextImg);
-    })(imgCount);
-
+    arrowRight.addEventListener("click", nextImg);
 
     function prevImg(e) {
       e = e || window.event;
@@ -54,7 +77,10 @@ function handler() {
       var numberPos = src.lastIndexOf('.jpg') - 1;
 
       var newPos = +src.substr(numberPos, 1) - 1;
-      if (newPos < 1) return;
+
+      if (newPos < 1) {
+        newPos = imgCount;
+      }
 
       var newsrc = src.slice(0, numberPos) + newPos + src.slice(numberPos + 1);
       img.setAttribute('src', newsrc);
@@ -69,7 +95,10 @@ function handler() {
       var numberPos = src.lastIndexOf('.jpg') - 1;
 
       var newPos = +src.substr(numberPos, 1) + 1;
-      if (newPos > imgCount) return;
+
+      if (newPos > imgCount) {
+        newPos = 1;
+      }
 
       var newsrc = src.slice(0, numberPos) + newPos + src.slice(numberPos + 1);
       img.setAttribute('src', newsrc);
@@ -84,6 +113,7 @@ function handler() {
       if (!document.querySelector('.fogging')) return;
 
       document.querySelector('.fogging').remove();
+      //document.querySelector('.container').remove();
       document.querySelector('.large-img').remove();
       document.querySelector('.arrow-left').remove();
       document.querySelector('.arrow-right').remove();
@@ -97,6 +127,7 @@ function handler() {
 
     if (target.classList.contains('fogging')) {
       document.querySelector('.fogging').remove();
+      //document.querySelector('.container').remove();
       document.querySelector('.large-img').remove();
       document.querySelector('.arrow-left').remove();
       document.querySelector('.arrow-right').remove();
