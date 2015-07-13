@@ -9,15 +9,19 @@ function handler() {
     var images = gallery.querySelectorAll('a');
     [].forEach.call(images, function(img) {
       (function(img) {
-        img.addEventListener("click", showImg);
+        img.addEventListener('click', showImg);
       })(img);
     });
 
   });
 
-  document.addEventListener("click", hideImg);
-  document.addEventListener("keydown", hideImgEsc);
+  document.addEventListener('click', hideImg);
+  document.addEventListener('keydown', hideImgEsc);
 
+  var question = document.querySelector('.question');
+  if (question) {
+    question.addEventListener('click', showForm);
+  }
 
   window.onresize = function() {
     if (!document.querySelector('.fogging')) return;
@@ -135,4 +139,30 @@ function handler() {
     }
   }
 
+  function showForm(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement; //for IE8
+
+    document.body.style.overflow = "hidden";
+//    document.body.insertAdjacentHTML('beforeEnd', '<div class="fogging"></div>');
+
+    var str = ' \
+    <div class="fogging-form"> \
+    <form name="question" class="form" method="POST" action="http://bellydance-samara1.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
+      <h2>Задайте вопрос</h2> \
+      <label for="name" data-required="true">Ваше имя </label> \
+      <input id="name" type="text" name="name" placeholder="Например: Ольга" required> \
+      <label for="email"data-required="true">Ваш e-mail </label> \
+      <input id="email" type="email" name="email" placeholder="Например: ivanova@mail.ru" required> \
+      <label for="title">Тема</label> \
+      <input id="title" type="text" name="title" placeholder="Например: Вопрос о расписании"> \
+      <label for="message">Сообщение</label> \
+      <textarea id="message" name="message" rows="5" placeholder="Например: Будут ли занятия в следующий четверг?"></textarea> \
+      <button type="submit" name="submit">Отправить</button> \
+      <p> - поля, обязательные для заполнения</p> \
+    </form> \
+    </div> \
+    ';
+    document.body.insertAdjacentHTML('beforeEnd', str);
+  }
 }

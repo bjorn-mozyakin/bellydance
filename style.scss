@@ -621,8 +621,8 @@ hr:after {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
-  opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.5);
+  //opacity: 0.5;
 }
 
 .large-img {
@@ -678,5 +678,99 @@ hr:after {
   background: $colorGray;
   //outline: 1px solid red;
 }
+
+
+/* Page Contacts (Контакты) */
+
+.fogging-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  //overflow: auto;
+  //white-space: nowrap;
+  //font-size: 0;
+
+  &:before {
+    content: '';
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    //outline: 3px solid green;
+    //background: yellow;
+  }
+}
+
+.form {
+  //position: fixed;
+  //left: 50%;
+  //top: 50%;
+  //right: 0;
+  //bottom: 0;
+  //margin-left: -50%;
+  //argin-top: -50%;
+  //display: block;
+  //width: 100%;
+  //height: 100%;
+}
+
+.form {
+  display: inline-block;
+  vertical-align: middle;
+  //white-space: normal;
+  text-align: left;
+  padding: 10px 25px;
+  border-radius: 8px;
+  background: -webkit-linear-gradient(to top, $colorOrange, $colorLightBrown);
+  background: -moz-linear-gradient(to top, $colorOrange, $colorLightBrown);
+  background: linear-gradient(to top, $colorOrange, $colorLightBrown);
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    box-sizing: border-box;
+    display: block;
+    margin: 5px 0 15px;
+    padding-left: 6px;
+    border: 1px solid $colorDarkGray;
+    border-radius: 5px;
+    width: 300px;
+  }
+
+  input {
+    @extend textarea;
+    height: 1.6rem;
+  }
+
+  label[data-required="true"]:after {
+    //display: block;
+    content: "*";
+    color: red;
+  }
+
+  input[type="submit"] {
+    box-sizing: border-box;
+    display: block;
+    margin: 30px 0;
+    border: none;
+    //1px solid $colorDarkGray;
+    border-radius: 5px;
+    width: 300px;
+    height: 2.2rem;
+  }
+
+  p:before {
+    content: "*";
+    color: red;
+  }
+}
+
+
 
   /*# sourceMappingURL=style.css.map */
