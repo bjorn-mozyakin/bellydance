@@ -59,14 +59,14 @@ Version: 1.0
     .sidebar-primary ul li.widget {
       margin-bottom: 20px;
       padding: 0 20px 10px 20px;
-      border: 1px solid #ccc;
+      border: 1px solid #cccccc;
       border-radius: 7px;
       background: #f4f4f4;
       box-shadow: 0 0 8px silver; }
       .sidebar-primary ul li.widget ul {
-        background: #fff;
+        background: white;
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid #cccccc;
         border-radius: 10px; }
         .sidebar-primary ul li.widget ul a, .sidebar-primary ul li.widget ul a:hover {
           color: #444444; }
@@ -88,7 +88,7 @@ Version: 1.0
         float: left;
         margin-right: 5%;
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid #cccccc;
         border-radius: 7px;
         width: 30%;
         font-size: 1rem; }
@@ -119,13 +119,13 @@ body {
   font-family: 'Fira', Times, sans-serif;
   font-size: 16px;
   color: #444444;
-  background: linear-gradient(to left, #F3F3F3, #fff 5%, #fff 95%, #F3F3F3); }
+  background: linear-gradient(to left, #F3F3F3, white 5%, white 95%, #F3F3F3); }
 
 p {
   text-align: justify; }
 
 a {
-  color: #ffa54c;
+  color: #d2c39e;
   font-weight: bold;
   text-decoration: none; }
 
@@ -165,8 +165,8 @@ table {
   width: 100%;
   margin: 15px 0;
   border-radius: 10px;
-  border: 0.5px solid #ccc;
-  background: #ccc;
+  border: 0.5px solid #cccccc;
+  background: #cccccc;
   border-collapse: separate;
   border-spacing: 2px; }
   table th {
@@ -179,7 +179,7 @@ table {
     padding: 8px 15px;
     text-align: center;
     vertical-align: middle;
-    background: #fff; }
+    background: white; }
   table .lt-round {
     border-top-left-radius: 10px; }
   table .rt-round {
@@ -208,7 +208,7 @@ table {
 hr {
   margin: 30px 0;
   border: none;
-  border-top: 5px double #ccc;
+  border-top: 5px double #cccccc;
   color: #colorDarkGray;
   text-align: center; }
 
@@ -218,12 +218,33 @@ hr:after {
   top: -1rem;
   font-size: 1.5rem;
   padding: 0 0.25rem;
-  color: #ccc;
+  color: #cccccc;
   background: white; }
 
 .more-link {
   display: none;
   /*Delete excess link, that appears if you usie tag MORE in post*/ }
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #444444;
+  background: -webkit-linear-gradient(to top, #d2c39e, #ece6ca);
+  background: -moz-linear-gradient(to top, #d2c39e, #ece6ca);
+  background: linear-gradient(to top, #d2c39e, #ece6ca);
+  box-shadow: 0px 0px 6px #cccccc; }
+
+.button:hover {
+  box-shadow: 0px 0px 6px #7f6b4b; }
+
+.button:active {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  transform: scale(0.9); }
+
+.button:focus {
+  outline: none; }
 
 /* Header-------------- */
 /* Logo */
@@ -346,7 +367,7 @@ hr:after {
     border-radius: 5px;
     overflow: hidden; }
     .gallery a img {
-      border: 2px solid #ccc; }
+      border: 2px solid #cccccc; }
   .gallery a:after {
     content: '';
     position: absolute;

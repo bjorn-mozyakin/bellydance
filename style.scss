@@ -55,13 +55,14 @@ Version: 1.0
 }
 
 
-$colorYellow: #f5f5dc;
-$colorBrown: #7f6b4b;
-$colorWhite: #fff;
-$colorGray: #f4f4f4;
-$colorDarkGray: #ccc;
-$colorOrange: #ffa54c;
-$colorBlack: #444444;
+$colorYellow: rgb(245, 245, 220);
+$colorBrown: rgb(127, 107, 75);
+$colorLightBrown: rgb(236, 230, 202);
+$colorWhite: rgb(255, 255, 255);
+$colorGray: rgb(244, 244, 244);
+$colorDarkGray: rgb(204, 204, 204);
+$colorOrange: rgb(210, 195, 158); //ffa54c;
+$colorBlack: rgb(68, 68, 68);
 
 /*    Main Layout    */
 #wrapper {
@@ -363,8 +364,31 @@ hr:after {
   /*Delete excess link, that appears if you usie tag MORE in post*/
 }
 
-/* Header-------------- */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: $colorBlack;
+  background: -webkit-linear-gradient(to top, $colorOrange, $colorLightBrown);
+  background: -moz-linear-gradient(to top, $colorOrange, $colorLightBrown);
+  background: linear-gradient(to top, $colorOrange, $colorLightBrown);
+  box-shadow: 0px 0px 6px $colorDarkGray;
+}
 
+.button:hover {
+  box-shadow: 0px 0px 6px $colorBrown;
+}
+
+.button:active {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.button:focus {
+  outline: none;
+}
+/* Header-------------- */
 
 /* Logo */
 .logo-block {
