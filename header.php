@@ -40,7 +40,7 @@
       <div class="title">Школа восточного танца</div>
     </div>
     <div class="info-block">
-      <div class="phone">Позвоните нам: <span>8-927-701-86-69</span></div>
+      <div class="phone">Позвоните нам: <span>8 (927) 701-86-69</span></div>
       <div class="search">
         <?php get_search_form(); ?>
       </div>

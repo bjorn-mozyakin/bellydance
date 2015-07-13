@@ -617,21 +617,37 @@ hr:after {
 
 .fogging {
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
-  //opacity: 0.5;
+
+  //overflow: auto;
+  //white-space: nowrap;
+  //font-size: 0;
+
+  &:before {
+    content: '';
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    //outline: 3px solid green;
+    //background: yellow;
+  }
 }
 
 .large-img {
-  position: fixed;
-   left: 5%;
-   top: 5%;
-   right: 5%;
-   bottom: 5%;
-   margin: auto;
+  // position: fixed;
+  //  left: 5%;
+  //  top: 5%;
+  //  right: 5%;
+  //  bottom: 5%;
+  //  margin: auto;
+    display: inline-block;
+    vertical-align: middle;
+
   max-width: 90%;
   max-height: 90%;
 //display: inline-block;
@@ -681,29 +697,6 @@ hr:after {
 
 
 /* Page Contacts (Контакты) */
-
-.fogging-form {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  //overflow: auto;
-  //white-space: nowrap;
-  //font-size: 0;
-
-  &:before {
-    content: '';
-    height: 100%;
-    display: inline-block;
-    vertical-align: middle;
-    //outline: 3px solid green;
-    //background: yellow;
-  }
-}
 
 .form {
   //position: fixed;

@@ -39,10 +39,10 @@ function handler() {
 
     document.body.style.overflow = "hidden";
 
-    document.body.insertAdjacentHTML('beforeEnd', '<div class="fogging"></div>');
+    //document.body.insertAdjacentHTML('beforeEnd', '<div class="fogging"></div>');
     var href = target.getAttribute('href');
     var str = ' \
-    <div class="container-wrapper"> \
+    <div class="fogging"> \
       <img class="large-img" src="' + href + '"> \
     </div>';
     document.body.insertAdjacentHTML('beforeEnd', str);
@@ -118,7 +118,7 @@ function handler() {
 
       document.querySelector('.fogging').remove();
       //document.querySelector('.container').remove();
-      document.querySelector('.large-img').remove();
+      //document.querySelector('.large-img').remove();
       document.querySelector('.arrow-left').remove();
       document.querySelector('.arrow-right').remove();
       document.body.style.overflow = "";
@@ -132,7 +132,7 @@ function handler() {
     if (target.classList.contains('fogging')) {
       document.querySelector('.fogging').remove();
       //document.querySelector('.container').remove();
-      document.querySelector('.large-img').remove();
+      //document.querySelector('.large-img').remove();
       document.querySelector('.arrow-left').remove();
       document.querySelector('.arrow-right').remove();
       document.body.style.overflow = "";
@@ -147,7 +147,7 @@ function handler() {
 //    document.body.insertAdjacentHTML('beforeEnd', '<div class="fogging"></div>');
 
     var str = ' \
-    <div class="fogging-form"> \
+    <div class="fogging"> \
     <form name="question" class="form" method="POST" action="http://bellydance-samara1.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
       <h2>Задайте вопрос</h2> \
       <label for="name" data-required="true">Ваше имя </label> \
@@ -158,7 +158,7 @@ function handler() {
       <input id="title" type="text" name="title" placeholder="Например: Вопрос о расписании"> \
       <label for="message">Сообщение</label> \
       <textarea id="message" name="message" rows="5" placeholder="Например: Будут ли занятия в следующий четверг?"></textarea> \
-      <button type="submit" name="submit">Отправить</button> \
+      <input type="submit" name="submit">Отправить</input> \
       <p> - поля, обязательные для заполнения</p> \
     </form> \
     </div> \
