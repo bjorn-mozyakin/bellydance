@@ -638,16 +638,29 @@ hr:after {
   border-radius: 8px;
 }
 
-.arrow-left {
+.arrows {
   position: fixed;
   left: 50%;
   top: 50%;
   display: inline-block;
+  width: 90px;
+  height: 40px;
+  outline: 3px solid red;
+  margin-left: -50px;
+  font-size: 0;
+}
+
+.arrow-left {
+  // position: fixed;
+  // left: 50%;
+  // top: 50%;
+   display: inline-block;
   width: 40px;
   height: 40px;
-  margin-left: -50px;
+  //margin-left: -50px;
   background: url(images/icons/arrow-left.png);
   cursor: pointer;
+  outline: 3px solid green;
 }
 
 .arrow-left:hover {
@@ -655,15 +668,17 @@ hr:after {
 }
 
 .arrow-right {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  display: inline-block;
+  // position: fixed;
+  // left: 50%;
+  // top: 50%;
+   display: inline-block;
   width: 40px;
   height: 40px;
   margin-left: 10px;
   background: url(images/icons/arrow-right.png);
   cursor: pointer;
+    outline: 3px solid blue;
+
 }
 
 .arrow-right:hover {

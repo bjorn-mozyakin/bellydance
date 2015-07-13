@@ -27,10 +27,11 @@ function handler() {
     if (!document.querySelector('.fogging')) return;
 
     var largeImg = document.querySelector('.large-img');
-    var leftArrow = document.querySelector('.arrow-left');
-    var rightArrow = document.querySelector('.arrow-right');
+    var arrows = document.querySelector('.arrows');
+    //var leftArrow = document.querySelector('.arrow-left');
+    //var rightArrow = document.querySelector('.arrow-right');
 
-    leftArrow.style.marginTop = rightArrow.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(leftArrow).height) - 10 + 'px';
+    arrows.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(arrows).height) - 10 + 'px';
   }
 
   function showImg(e) {
@@ -44,7 +45,12 @@ function handler() {
     var str = ' \
     <div class="fogging"> \
       <img class="large-img" src="' + href + '"> \
-    </div>';
+    </div> \
+    <div class="arrows"> \
+      <div class="arrow-left"></div> \
+      <div class="arrow-right"></div> \
+    </div> \
+    ';
     document.body.insertAdjacentHTML('beforeEnd', str);
 
     e.preventDefault();
@@ -52,27 +58,27 @@ function handler() {
     var imgCount = target.parentNode.querySelectorAll('a').length;
 
     var largeImg = document.querySelector('.large-img');
-
-    var str = '<div class="arrow-left"></div><div class="arrow-right"></div>';
-    document.body.insertAdjacentHTML('beforeEnd' , str);
-
-    var leftArrow = document.querySelector('.arrow-left');
-    var rightArrow = document.querySelector('.arrow-right');
-    leftArrow.style.display = rightArrow.style.display = "none";
+    var arrows = document.querySelector('.arrows');
+    arrows.style.display = "none";
 
     largeImg.onload = function() {
-      leftArrow.style.display = rightArrow.style.display = "";
-      leftArrow.style.marginTop = rightArrow.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(leftArrow).height) - 10 + 'px';
+      arrows.style.display = "";
+      arrows.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(arrows).height) - 10 + 'px';
     }
 
-    var arrowLeft = document.querySelector('.arrow-left');
-    arrowLeft.addEventListener("click", prevImg);
+    document.onkeydown = null;
+    // if (typeof(document.onkeydown)=="function") {
+    //   alert ('обработчик стоит');
+    // }
+    //document.removeEventListener("keydown", changeImg);
+      document.onkeydown = changeImg;
 
-    var arrowRight = document.querySelector('.arrow-right');
 
-    arrowRight.addEventListener("click", nextImg);
 
-    function prevImg(e) {
+
+    arrows.addEventListener("click", changeImg);
+
+    function changeImg(e) {
       e = e || window.event;
       var target = e.target || e.srcElement; //for IE8
 
@@ -80,10 +86,21 @@ function handler() {
       var src = img.getAttribute('src');
       var numberPos = src.lastIndexOf('.jpg') - 1;
 
-      var newPos = +src.substr(numberPos, 1) - 1;
 
-      if (newPos < 1) {
-        newPos = imgCount;
+      if ((target.classList.contains('arrow-left')) || (e.keyCode = "37")) {
+        var newPos = +src.substr(numberPos, 1) - 1;
+
+        if (newPos < 1) {
+          newPos = imgCount;
+        }
+      }
+
+      if ((target.classList.contains('arrow-right')) || (e.keyCode = "39")) {
+        var newPos = +src.substr(numberPos, 1) + 1;
+
+        if (newPos > imgCount) {
+          newPos = 1;
+        }
       }
 
       var newsrc = src.slice(0, numberPos) + newPos + src.slice(numberPos + 1);
@@ -119,8 +136,11 @@ function handler() {
       document.querySelector('.fogging').remove();
       //document.querySelector('.container').remove();
       //document.querySelector('.large-img').remove();
-      document.querySelector('.arrow-left').remove();
-      document.querySelector('.arrow-right').remove();
+      document.querySelector('.arrows').remove();
+      //document.querySelector('.arrow-left').remove();
+      //document.querySelector('.arrow-right').remove();
+          //document.removeEventListener("keydown", changeImg);
+
       document.body.style.overflow = "";
     }
   }
@@ -133,9 +153,12 @@ function handler() {
       document.querySelector('.fogging').remove();
       //document.querySelector('.container').remove();
       //document.querySelector('.large-img').remove();
-      document.querySelector('.arrow-left').remove();
-      document.querySelector('.arrow-right').remove();
+      document.querySelector('.arrows').remove();
+      //document.querySelector('.arrow-left').remove();
+      //document.querySelector('.arrow-right').remove();
       document.body.style.overflow = "";
+          //document.removeEventListener("keydown", changeImg);
+
     }
   }
 
