@@ -5,7 +5,12 @@ function handler() {
   /*Page Contacts - Form Question*/
   var question = document.querySelector('.question');
   if (question) {
-    question.addEventListener('click', showForm);
+    question.addEventListener('click', showFormQuestion);
+  }
+
+  var bid = document.querySelector('.bid');
+  if (bid) {
+    bid.addEventListener('click', showFormBid);
   }
 
   var galleries =  document.querySelectorAll('.gallery');
@@ -28,7 +33,7 @@ function handler() {
   document.addEventListener('click', hideAll);
   document.addEventListener('keydown', hideAll);
 
-  function showForm(e) {
+  function showFormQuestion(e) {
     e = e || window.event;
     var target = e.target || e.srcElement; //for IE8
 
@@ -46,13 +51,74 @@ function handler() {
       <input id="title" type="text" name="title" placeholder="Например: Вопрос о расписании"> \
       <label for="message">Сообщение</label> \
       <textarea id="message" name="message" rows="5" placeholder="Например: Будут ли занятия в следующий четверг?"></textarea> \
-      <input type="submit" name="submit">Отправить</input> \
+      <input type="submit" name="submit"></input> \
       <p> - поля, обязательные для заполнения</p> \
     </form> \
     </div> \
     ';
     document.body.insertAdjacentHTML('beforeEnd', str);
   }
+
+  function showFormBid(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement; //for IE8
+
+    document.body.style.overflow = "hidden";
+
+    var str = ' \
+    <div class="fogging"> \
+    <form name="bid" class="form" method="POST" action="http://bellydance-samara1.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
+      <h2>Заполните форму</h2> \
+      <label for="name" data-required="true">Ваше имя </label> \
+      <input id="name" type="text" name="name" placeholder="Например: Ольга" required> \
+      <label for="tel" data-required="true">Контактный телефон </label> \
+      <input id="tel" type="tel" name="email" placeholder="Например: 927-000-11-22" required> \
+      <label for="dancestyle" data-required="true">Выберите направление</label> \
+      <select id="dancestyle" name="title" required> \
+        <option></option> \
+        <option>Восточные танцы</option> \
+        <option>Фитнес</option> \
+      </select> \
+      <label for="halls" data-required="true">Выберите адрес зала</label> \
+      <select id="halls" name="title" required> \
+        <option></option> \
+        <option>ул. Мориса Тореза, 103 А (Парк Победы)</option> \
+        <option>ул. Пушкина (Бр. Коростелевых), 280</option> \
+        <option>ул. Стара-Загора, 164</option> \
+        <option>пр-т. Металлургов, 75</option> \
+      </select> \
+      <label for="date">Выберите желаемую дату начала занятий</label> \
+      <input id="date" type="date" name="date" min="2015-07-14" step="2"> \
+      <input type="submit" name="submit"></input> \
+      <p> - поля, обязательные для заполнения</p> \
+    </form> \
+    </div> \
+    ';
+    document.body.insertAdjacentHTML('beforeEnd', str);
+
+    var danceStyle = document.getElementById('dancestyle');
+    danceStyle.addEventListener('change', filterHalls);
+
+    function filterHalls() {
+        //select.selectedIndex;
+
+      var bid = document.forms.bid;
+      var halls = bid.elements.halls;
+
+      halls.selectedIndex = -1;
+      halls.options[2].style.display = halls.options[4].style.display = "";
+
+      if (this.selectedIndex == 0) {
+        halls.selectedIndex = -1;
+        halls.options[2].style.display = halls.options[4].style.display = "";
+      }
+
+      if (this.selectedIndex == 2) {
+        halls.options[2].style.display = halls.options[4].style.display = "none";
+      }
+    }
+  }
+
 
   function showImg(e) {
     e = e || window.event;
