@@ -37,7 +37,7 @@
           alt="Обучение восточным танцам, танцам живота в Самаре." />
         </a>
       </div>
-      <div class="title">Школа восточного танца</div>
+      <div class="title"><a href="/">Школа восточного танца</a></div>
     </div>
     <div class="info-block">
       <div class="phone">Позвоните нам: <span>8 (927) 701-86-69</span></div>

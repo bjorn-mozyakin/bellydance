@@ -55,13 +55,12 @@ Version: 1.0
 }
 
 
-$colorYellow: rgb(245, 245, 220);
-$colorBrown: rgb(127, 107, 75);
+$colorBrown: rgb(148, 126, 87);
+$colorMiddleOrange: rgb(210, 195, 158); //ffa54c;
 $colorLightBrown: rgb(236, 230, 202);
 $colorWhite: rgb(255, 255, 255);
 $colorGray: rgb(244, 244, 244);
 $colorDarkGray: rgb(204, 204, 204);
-$colorOrange: rgb(210, 195, 158); //ffa54c;
 $colorBlack: rgb(68, 68, 68);
 
 /*    Main Layout    */
@@ -97,7 +96,7 @@ $colorBlack: rgb(68, 68, 68);
 
 .sidebar-primary {
   float: right;
-  width: 300px;
+  width: 350px;
   //outline: 1px solid maroon;
 
   ul {
@@ -109,41 +108,43 @@ $colorBlack: rgb(68, 68, 68);
       margin-bottom: 20px;
       padding: 0 20px 10px 20px;
       border: 1px solid $colorDarkGray;
-      border-radius: 7px;
-      background: $colorGray;
-      box-shadow: 0 0 8px silver;
+      border-radius: 6px;
+      background: $colorWhite;
+      box-shadow: 0 0 4px silver;
 
-      ul {
-        background: $colorWhite;
-        padding: 10px;
-        border: 1px solid $colorDarkGray;
-        border-radius: 10px;
-        li p {
+      p:nth-child(odd) {
+        margin: 1rem 0 0;
+        padding: 0;
+      }
 
-        }
-        a, a:hover {
-          color: $colorBlack;
-        }
-
-        .more-link {
-          display: block;
-          margin-top: 20px;
-        }
+      p:nth-child(even) {
+        margin: 0;
+        padding: 0;
       }
     }
+  }
 
-    p {
-      //margin: 0;
-      //padding: 0;
-      //margin-top: 0.2rem;
-      //margin-bottom: 0.2rem;
+  .sidebar-primary-reviews {
+    padding: 0 20px 10px 20px;
+    border: 1px solid $colorDarkGray;
+    border-radius: 6px;
+    background: $colorWhite;
+    box-shadow: 0 0 4px silver;
+
+    .sidebar-primary-review {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid $colorDarkGray;
+      border-radius: 10px;
+      background: $colorGray;
     }
   }
+
 }
 
 .sidebar-news-on-main-page {
   //outline: 1px solid red;
-  margin-right: 300px;
+  margin-right: 350px;
 
   ul {
     margin: 0;
@@ -177,7 +178,7 @@ $colorBlack: rgb(68, 68, 68);
 }
 
 .hello {
-  margin-right: 300px;
+  margin-right: 350px;
 }
 
 #footer {
@@ -186,6 +187,7 @@ $colorBlack: rgb(68, 68, 68);
   width: 100%;
   left: 0;
   bottom: 0;
+  border-top: 4px solid $colorGray;
   height: 80px;
   padding: 0px 30px;
   //outline: 1px solid blue;
@@ -211,7 +213,7 @@ p {
 }
 
 a {
-  color: $colorOrange;
+  color: $colorBrown;
   font-weight: bold;
   text-decoration: none;
 }
@@ -323,7 +325,6 @@ table {
 
 }
 
-
 hr {
   margin: 30px 0;
   border: none;
@@ -347,14 +348,21 @@ hr:after {
   /*Delete excess link, that appears if you usie tag MORE in post*/
 }
 
+.more {
+  margin: 0;
+  margin-top: 25px;
+  padding: 0;
+
+}
+
 .button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   color: $colorBlack;
-  background: -webkit-linear-gradient(to top, $colorOrange, $colorLightBrown);
-  background: -moz-linear-gradient(to top, $colorOrange, $colorLightBrown);
-  background: linear-gradient(to top, $colorOrange, $colorLightBrown);
+  background: -webkit-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
+  background: -moz-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
+  background: linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
   box-shadow: 0px 0px 6px $colorDarkGray;
 }
 
@@ -371,6 +379,32 @@ hr:after {
 .button:focus {
   outline: none;
 }
+
+.social-buttons {
+  float: right;
+  //outline: 1px solid red;
+
+  p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    //outline: 2px dotted green;
+
+    a {
+      display: inline-block;
+      position: relative;
+      top: 7px;
+      width: 30px;
+      height: 30px;
+      margin: 0 0 0 11px;
+      background: url(images/icons/vk.png) no-repeat;
+    }
+    a:hover {
+      background: url(images/icons/vk-hover.png) no-repeat;
+    }
+  }
+
+
+}
 /* Header-------------- */
 
 /* Logo */
@@ -385,12 +419,16 @@ hr:after {
   }
 
   .title {
-    position: absolute;
-    left: 42px;
-    top: 90px;
-    font-family: "Kurale", Times, serif;
-    letter-spacing: 1.2px;
-    font-weight: bold;
+    a, a:hover {
+      position: absolute;
+      left: 42px;
+      top: 90px;
+      font-family: "Kurale", Times, serif;
+      letter-spacing: 1.2px;
+      font-weight: bold;
+      color: $colorBlack;
+      text-decoration: none;
+    }
   }
 }
 
@@ -452,7 +490,8 @@ hr:after {
         vertical-align: top;
       }
 
-      input[type="submit"]:hover {
+      input[type="submit"]:focus {
+        outline: none;
       }
     }
   }
@@ -710,9 +749,9 @@ hr:after {
   text-align: left;
   padding: 10px 25px;
   border-radius: 8px;
-  background: -webkit-linear-gradient(to top, $colorOrange, $colorLightBrown);
-  background: -moz-linear-gradient(to top, $colorOrange, $colorLightBrown);
-  background: linear-gradient(to top, $colorOrange, $colorLightBrown);
+  background: -webkit-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
+  background: -moz-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
+  background: linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
 
   h2 {
     margin-bottom: 20px;

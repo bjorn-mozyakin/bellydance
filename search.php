@@ -28,8 +28,6 @@ Template Name: zrak-wp
         <?php posts_nav_link(); ?>
       </div>
     </div>
-    <?php get_sidebar('primary'); ?>
-    <!--<?php get_sidebar('secondary'); ?>-->
   </div>
 </div>
 <?php get_footer(); ?>
