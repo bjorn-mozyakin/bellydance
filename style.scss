@@ -63,6 +63,14 @@ $colorGray: rgb(244, 244, 244);
 $colorDarkGray: rgb(204, 204, 204);
 $colorBlack: rgb(68, 68, 68);
 
+@mixin transform($deg) {
+  -webkit-transform:rotate($deg);
+     -moz-transform:rotate($deg);
+      -ms-transform:rotate($deg);
+       -o-transform:rotate($deg);
+          transform:rotate($deg);
+}
+
 /*    Main Layout    */
 #wrapper {
   position: relative;
@@ -103,17 +111,53 @@ $colorBlack: rgb(68, 68, 68);
     margin: 0;
     padding: 0;
     list-style-type: none;
+    @include transform(2deg);
+    //outline: 1px solid green;
 
     li.widget {
-      margin-bottom: 20px;
+      position:relative;
+      width:310px;
+      margin-bottom: 40px;
       padding: 0 20px 10px 20px;
-      border: 1px solid $colorDarkGray;
       border-radius: 6px;
       background: $colorWhite;
-      box-shadow: 0 0 4px silver;
+      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      //outline: 1px dotted red;
+
+      &:before {
+        content:"";
+        position:absolute;
+        left: 10px;
+        bottom:15px;
+        width:95%;
+        height:95%;
+        z-index:-2;
+        -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        @include transform(2deg);
+        //outline: 2px dotted yellow;
+      }
+
+      &:after {
+        content:"";
+        position:absolute;
+        right:10px;
+        bottom:15px;
+        width:95%;
+        height:95%;
+        z-index:-2;
+        -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        @include transform(-2deg);
+        //outline: 2px dotted orange;
+      }
 
       p:nth-child(odd) {
-        margin: 1rem 0 0;
+        margin: 2rem 0 0;
         padding: 0;
       }
 
@@ -123,24 +167,82 @@ $colorBlack: rgb(68, 68, 68);
       }
     }
   }
+}
+
+.sidebar-primary-reviews-wrapper {
+
+  @include transform(-2deg);
 
   .sidebar-primary-reviews {
-    padding: 0 20px 10px 20px;
-    border: 1px solid $colorDarkGray;
-    border-radius: 6px;
-    background: $colorWhite;
-    box-shadow: 0 0 4px silver;
+    // padding: 0 20px 10px 20px;
+    // border: 1px solid $colorDarkGray;
+    // border-radius: 6px;
+    // background: $colorWhite;
+    // box-shadow: 0 0 4px silver;
 
-    .sidebar-primary-review {
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid $colorDarkGray;
-      border-radius: 10px;
-      background: $colorGray;
+       margin-bottom: 20px;
+       padding: 0 20px 10px 20px;
+      // border: 1px solid $colorDarkGray;
+       border-radius: 6px;
+       background: $colorWhite;
+      // box-shadow: 0 0 4px silver;
+
+      position:relative;
+      width:310px;
+      //height: 100%;
+      //padding:10px;
+      //margin:2em 10px 4em;
+      //margin:2em 10px;
+      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      //outline: 1px dotted red;
+
+      &:before {
+        content:"";
+        position:absolute;
+        bottom:15px;
+        left: 10px;
+        width:95%;
+        height:95%;
+        z-index:-2;
+        //max-width:280px;
+
+      -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+         -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+              box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+          @include transform(2deg);
+              //outline: 2px dotted yellow;
+        }
+
+      &:after {
+        content:"";
+        position:absolute;
+        bottom:15px;
+        right:10px;
+        z-index:-2;
+        //left: 0;
+        width:95%;
+        height:95%;
+        //max-width:280px;
+    -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+       -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+            box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+
+        @include transform(-2deg);
+              //outline: 2px dotted orange;
+
+    // .sidebar-primary-review {
+    //   margin: 10px 0;
+    //   padding: 10px;
+    //   border: 1px solid $colorDarkGray;
+    //   border-radius: 10px;
+    //   background: $colorGray;
+    // }
+      }
     }
-  }
-
 }
+
 
 .sidebar-news-on-main-page {
   //outline: 1px solid red;
@@ -158,7 +260,7 @@ $colorBlack: rgb(68, 68, 68);
         //outline: 1px solid green;
         font-size: 0;
 
-        li{
+        li {
           box-sizing: border-box;
           float: left;
           margin-right: 5%;
@@ -350,8 +452,9 @@ hr:after {
 
 .more {
   margin: 0;
-  margin-top: 25px;
+  margin-top: 30px;
   padding: 0;
+  //outline: 1px solid red;
 
 }
 
