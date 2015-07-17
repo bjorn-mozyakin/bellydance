@@ -31,13 +31,13 @@ Template Name: zrak-wp
         ?></h1>
       <?php while ( have_posts() ) : the_post(); ?>
         <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-        <p class="article-info"><img src="<?php bloginfo('template_url'); ?>/images/icons/date.png" /> <?php the_time('j F Y'); ?> | <!--<?php the_author_posts_link(); ?> | --><?php the_category(', '); ?><!--в <?php the_time('G:i'); ?> | <?php comments_number('Нет комментариев', '1 комментарий', '% comments'); ?>--></p>
+        <p class="article-info"><img src="<?php bloginfo('template_url'); ?>/images/icons/date.png" /> <?php the_time('j F Y'); ?> | <!--<?php the_author_posts_link(); ?> | <?php the_category(', '); ?>в <?php the_time('G:i'); ?> | <?php comments_number('Нет комментариев', '1 комментарий', '% comments'); ?>--></p>
         <!--<?php the_date_xml(); ?>-->
         <!--<?php the_excerpt(); ?>-->
         <p><?php the_post_thumbnail(); ?></p>
         <?php the_content(); ?>
         <p class="tags"><?php the_tags(); ?></p>
-        <p><a href="<?php the_permalink() ?>">Читать дальше</a></p>
+        <p><a href="<?php the_permalink() ?>">Подробнее</a></p>
         <hr />
       <?php endwhile; else: ?>
         <h2 class="title-style">Не найдено ни одного материала.</h2>

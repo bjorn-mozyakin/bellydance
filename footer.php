@@ -1,6 +1,6 @@
   <footer id="footer">
     <div class="social-buttons">
-      <p>Мы в контакте<a href="https://vk.com/bellydance_samara" target="_blank"></a></p>
+      Мы в контакте<a href="https://vk.com/bellydance_samara" target="_blank"></a>
     </div>
     <div>
       <p>© 2013-<?php echo date('Y');?><!--<?php the_time('Y'); ?>--> <a href="\"><?php bloginfo('name'); ?></a><br />

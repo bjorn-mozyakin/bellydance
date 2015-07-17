@@ -485,28 +485,23 @@ hr:after {
 
 .social-buttons {
   float: right;
-  //outline: 1px solid red;
+  font-size: 1.5rem;
+  font-weight: bold;
+  //outline: 2px dotted green;
 
-  p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    //outline: 2px dotted green;
+  a {
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    width: 30px;
+    height: 30px;
+    margin-left:10px;
+    background: url(images/icons/vk.png) no-repeat;
 
-    a {
-      display: inline-block;
-      position: relative;
-      top: 7px;
-      width: 30px;
-      height: 30px;
-      margin: 0 0 0 11px;
-      background: url(images/icons/vk.png) no-repeat;
-    }
-    a:hover {
+    &:hover {
       background: url(images/icons/vk-hover.png) no-repeat;
     }
   }
-
-
 }
 /* Header-------------- */
 
@@ -830,11 +825,47 @@ hr:after {
 
 
 /* Page Reviewes (Отзывы)*/
-.reviewes p {
-  padding: 10px;
-  border-radius: 7px;
-  background: $colorGray;
-  //outline: 1px solid red;
+.reviewes-container {
+
+  .review {
+    margin-bottom: 20px;
+    border-bottom: 5px double $colorDarkGray;
+    text-align: center;
+    color: #colorDarkGray;
+    //outline: 3px dotted black;
+
+    &:after {
+      content: "§";
+      position: relative;
+      bottom: -1rem;
+      padding: 0 0.25rem;
+      font-size: 1.5rem;
+      color: $colorDarkGray;
+      background: white;
+      //outline: 1px dotted green;
+    }
+
+    p {
+      margin: 0;
+      padding: 10px;
+      border-radius: 7px;
+      background: $colorGray;
+      //outline: 1px solid red;
+    }
+  }
+
+  .review:last-child {
+    border-bottom: none;
+
+    &:after {
+      content: "";
+      bottom: 0rem;
+      color: $colorDarkGray;
+      background: white;
+      //outline: 1px dotted green;
+    }
+  }
+
 }
 
 
