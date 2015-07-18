@@ -231,6 +231,16 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 1.8rem; }
+  h1:before {
+    content: url(images/icons/titles-ornament-left.png);
+    position: relative;
+    bottom: 0.1rem;
+    margin-right: 25px; }
+  h1:after {
+    content: url(images/icons/titles-ornament-right.png);
+    position: relative;
+    bottom: 0.1rem;
+    margin-left: 25px; }
 
 h2 {
   font-size: 1.6rem; }
@@ -283,22 +293,6 @@ table {
   table.title-top tr:last-child td:last-child {
     border-bottom-right-radius: 10px; }
 
-hr {
-  margin: 30px 0;
-  border: none;
-  border-top: 5px double #cccccc;
-  color: #colorDarkGray;
-  text-align: center; }
-
-hr:after {
-  content: "§";
-  position: relative;
-  top: -1rem;
-  font-size: 1.5rem;
-  padding: 0 0.25rem;
-  color: #cccccc;
-  background: white; }
-
 .more-link {
   display: none;
   /*Delete excess link, that appears if you usie tag MORE in post*/ }
@@ -317,17 +311,14 @@ hr:after {
   background: -moz-linear-gradient(to top, #d2c39e, #ece6ca);
   background: linear-gradient(to top, #d2c39e, #ece6ca);
   box-shadow: 0px 0px 6px #cccccc; }
-
-.button:hover {
-  box-shadow: 0px 0px 6px #947e57; }
-
-.button:active {
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  transform: scale(0.9); }
-
-.button:focus {
-  outline: none; }
+  .button:hover {
+    box-shadow: 0px 0px 6px #947e57; }
+  .button:active {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9); }
+  .button:focus {
+    outline: none; }
 
 .social-buttons {
   float: right;
@@ -416,7 +407,7 @@ hr:after {
     margin: 0;
     padding: 0 20px;
     list-style: none; }
-    .main-menu ul li.current_page_item a {
+    .main-menu ul li.current-menu-item a {
       border-bottom: 2px solid #444444; }
     .main-menu ul li, .main-menu ul li:last-child {
       flex-grow: 1;
@@ -509,36 +500,49 @@ hr:after {
   border: 4px solid #f0f0f0;
   border-radius: 8px; }
 
+.close {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: url(images/icons/close.png);
+  font-size: 0; }
+  .close:hover {
+    background: url(images/icons/close-hover.png); }
+  .close:active {
+    background: url(images/icons/close-active.png); }
+
 .arrows {
   position: fixed;
   left: 50%;
   top: 50%;
-  display: inline-block;
-  width: 90px;
+  display: none;
   height: 40px;
-  margin-left: -50px;
   font-size: 0; }
   .arrows .arrow-left {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: url(images/icons/arrow-left.png);
-    cursor: pointer; }
-    .arrows .arrow-left:hover {
-      background: url(images/icons/arrow-left-hover.png); }
-    .arrows .arrow-left:active {
-      background: url(images/icons/arrow-left-active.png); }
-  .arrows .arrow-right {
-    display: inline-block;
+    float: left;
     width: 40px;
     height: 40px;
     margin-left: 10px;
-    background: url(images/icons/arrow-right.png);
+    background: url(images/icons/arrow-left.png) no-repeat;
+    cursor: pointer; }
+    .arrows .arrow-left:hover {
+      background: url(images/icons/arrow-left-hover.png) no-repeat; }
+    .arrows .arrow-left:active {
+      background: url(images/icons/arrow-left-active.png) no-repeat; }
+  .arrows .arrow-right {
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background: url(images/icons/arrow-right.png) no-repeat;
     cursor: pointer; }
     .arrows .arrow-right:hover {
-      background: url(images/icons/arrow-right-hover.png); }
+      background: url(images/icons/arrow-right-hover.png) no-repeat; }
     .arrows .arrow-right:active {
-      background: url(images/icons/arrow-right-active.png); }
+      background: url(images/icons/arrow-right-active.png) no-repeat; }
 
 /* Page Reviewes (Отзывы)*/
 .reviewes-container .review {

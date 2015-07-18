@@ -27,7 +27,7 @@ function handler() {
 
     });
 
-    window.addEventListener('resize', resizeImg);
+    window.addEventListener('resize', resizeGallery);
   }
 
   document.addEventListener('click', hideAll);
@@ -134,19 +134,20 @@ function handler() {
     var str = ' \
     <div class="fogging"> \
       <img class="large-img" src="' + href + '"> \
-    </div> \
-    <div class="arrows"> \
-      <div class="arrow-left"></div> \
-      <div class="arrow-right"></div> \
+      <div class="close"></div> \
+      <div class="arrows"> \
+        <div class="arrow-left"></div> \
+        <div class="arrow-right"></div> \
+      </div> \
     </div> \
     ';
     document.body.insertAdjacentHTML('beforeEnd', str);
 
     var largeImg = document.querySelector('.large-img');
     var arrows = document.querySelector('.arrows');
+    var close = document.querySelector('.close');
 
-    arrows.style.display = "none";
-    largeImg.addEventListener('load', showArrows);
+    largeImg.addEventListener('load', showGalleryNav);
 
     //document.removeEventListener("keydown", changeImg);
     //document.addEventListener("keydown", changeImg);
@@ -160,6 +161,7 @@ function handler() {
       var target = e.target || e.srcElement; //for IE8
 
       if (e.keyCode && e.keyCode != '37' && e.keyCode != '39') return;
+      if (target.classList.contains('arrows')) return;
 
       var img = document.querySelector('.large-img');
       var src = img.getAttribute('src');
@@ -185,19 +187,29 @@ function handler() {
       img.setAttribute('src', newsrc);
     }
 
-    function showArrows() {
-      arrows.style.display = "";
-      arrows.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(arrows).height) - 10 + 'px';
+    function showGalleryNav() {
+      arrows.style.display = "inline-block";
+      close.style.display = "inline-block";
+      //arrows.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(arrows).height) - 10 + 'px';
+      //arrows.style.marginLeft = 0 - largeImg.clientWidth / 2 + 'px';
+      //arrows.style.width = largeImg.clientWidth + 'px';
+      resizeGallery();
     }
   }
 
-  function resizeImg() {
+  function resizeGallery() {
     if (!document.querySelector('.large-img')) return;
 
     var largeImg = document.querySelector('.large-img');
+    var close = document.querySelector('.close');
     var arrows = document.querySelector('.arrows');
 
-    arrows.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(arrows).height) - 10 + 'px';
+    close.style.marginLeft = largeImg.clientWidth / 2 - parseInt(getComputedStyle(close).width) + 'px';
+    close.style.marginTop = 0 - largeImg.clientHeight / 2 + 'px';
+
+    arrows.style.marginLeft = 0 - largeImg.clientWidth / 2 + 'px';
+    arrows.style.marginTop = 0 - parseInt(getComputedStyle(arrows).height) / 2 + 'px';
+    arrows.style.width = largeImg.clientWidth + 'px';
   }
 
   function hideAll(e) {
@@ -206,12 +218,12 @@ function handler() {
 
     if (!document.querySelector('.fogging')) return;
 
-    if ((e.keyCode == 27) || (target.classList.contains('fogging'))) {
+    if ((e.keyCode == 27) || (target.classList.contains('fogging')) || (target.classList.contains('close'))) {
       document.querySelector('.fogging').remove();
       document.body.style.overflow = "";
 
-      if (!document.querySelector('.arrows')) return;
-      document.querySelector('.arrows').remove();
+      // if (!document.querySelector('.arrows')) return;
+      // document.querySelector('.arrows').remove();
     }
   }
 
