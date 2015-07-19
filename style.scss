@@ -752,82 +752,154 @@ table {
     //outline: 3px solid green;
     //background: yellow;
   }
-}
 
-.large-img {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 90%;
-  max-height: 90%;
-  border: 4px solid rgb(240,240,240);
-  border-radius: 8px;
-}
-
-.close {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  display: none;
-  width: 40px;
-  height: 40px;
-  background: url(images/icons/close.png);
-  font-size: 0;
-  //outline: 1px dashed red;
-
-  &:hover {
-    background: url(images/icons/close-hover.png);
-  }
-
-  &:active {
-    background: url(images/icons/close-active.png);
-  }
-}
-
-.arrows {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  display: none;
-  height: 40px;
-  font-size: 0;
-  //outline: 1px dashed red;
-
-  .arrow-left {
-    float: left;
+  .close {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: none;
     width: 40px;
     height: 40px;
-    margin-left: 10px;
-    background: url(images/icons/arrow-left.png) no-repeat;
+    background: url(images/icons/close.png) no-repeat;
+    font-size: 0;
     cursor: pointer;
-    //outline: 3px solid green;
+
+    //outline: 1px dashed red;
+    //z-index: 10;
 
     &:hover {
-      background: url(images/icons/arrow-left-hover.png) no-repeat;
+      background: url(images/icons/close-hover.png) no-repeat;
     }
 
     &:active {
-      background: url(images/icons/arrow-left-active.png) no-repeat;
+      background: url(images/icons/close-active.png) no-repeat;
     }
   }
 
-  .arrow-right {
-    float: right;
-    width: 40px;
+  .large-img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 90%;
+    max-height: 90%;
+    border: 4px solid rgb(240,240,240);
+    border-radius: 8px;
+  }
+
+  .arrows {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: none;
     height: 40px;
-    margin-right: 10px;
-    background: url(images/icons/arrow-right.png) no-repeat;
-    cursor: pointer;
-    //outline: 3px solid blue;
+    font-size: 0;
+    //outline: 1px dashed red;
 
-    &:hover {
-      background: url(images/icons/arrow-right-hover.png) no-repeat;
+    .arrow-left {
+      float: left;
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+      background: url(images/icons/arrow-left.png) no-repeat;
+      cursor: pointer;
+      //outline: 3px solid green;
+
+      &:hover {
+        background: url(images/icons/arrow-left-hover.png) no-repeat;
+      }
+
+      &:active {
+        background: url(images/icons/arrow-left-active.png) no-repeat;
+      }
     }
 
-    &:active {
-      background: url(images/icons/arrow-right-active.png) no-repeat;
+    .arrow-right {
+      float: right;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      background: url(images/icons/arrow-right.png) no-repeat;
+      cursor: pointer;
+      //outline: 3px solid blue;
+
+      &:hover {
+        background: url(images/icons/arrow-right-hover.png) no-repeat;
+      }
+
+      &:active {
+        background: url(images/icons/arrow-right-active.png) no-repeat;
+      }
     }
   }
 
+  .form {
+    display: inline-block;
+    vertical-align: middle;
+    //white-space: normal;
+    text-align: left;
+    padding: 10px 25px;
+    border-radius: 8px;
+    background: -webkit-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
+    background: -moz-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
+    background: linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    label[data-required="true"]:after {
+      //display: block;
+      content: "*";
+      color: red;
+    }
+
+    textarea {
+      box-sizing: border-box;
+      display: block;
+      margin: 5px 0 15px;
+      padding-left: 6px;
+      border: 1px solid $colorDarkGray;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    input,
+    select {
+      @extend textarea;
+      height: 1.6rem;
+    }
+
+    input[type="submit"] {
+      box-sizing: border-box;
+      display: block;
+      margin: 30px 0;
+      border: none;
+      //1px solid $colorDarkGray;
+      border-radius: 5px;
+      width: 100%;
+      height: 2.2rem;
+    }
+
+    p:before {
+      content: "*";
+      color: red;
+    }
+
+    .close {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background: url(images/icons/close-form.png) no-repeat;
+      //outline: 1px dashed red;
+
+      &:hover {
+        background: url(images/icons/close-form-hover.png) no-repeat;
+      }
+
+      &:active {
+        background: url(images/icons/close-form-active.png) no-repeat;
+      }
+    }
+  }
 }
 
 
@@ -882,61 +954,5 @@ table {
     width: 50%;
   }
 }
-
-.form {
-  display: inline-block;
-  vertical-align: middle;
-  //white-space: normal;
-  text-align: left;
-  padding: 10px 25px;
-  border-radius: 8px;
-  background: -webkit-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
-  background: -moz-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
-  background: linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
-
-  h2 {
-    margin-bottom: 20px;
-  }
-
-  label[data-required="true"]:after {
-    //display: block;
-    content: "*";
-    color: red;
-  }
-
-  textarea {
-    box-sizing: border-box;
-    display: block;
-    margin: 5px 0 15px;
-    padding-left: 6px;
-    border: 1px solid $colorDarkGray;
-    border-radius: 5px;
-    width: 100%;
-  }
-
-  input,
-  select {
-    @extend textarea;
-    height: 1.6rem;
-  }
-
-  input[type="submit"] {
-    box-sizing: border-box;
-    display: block;
-    margin: 30px 0;
-    border: none;
-    //1px solid $colorDarkGray;
-    border-radius: 5px;
-    width: 100%;
-    height: 2.2rem;
-  }
-
-  p:before {
-    content: "*";
-    color: red;
-  }
-}
-
-
 
   /*# sourceMappingURL=style.css.map */
