@@ -41,7 +41,7 @@ function handler() {
 
     var str = ' \
     <div class="fogging"> \
-      <form name="question" class="form" method="POST" action="http://bellydance-samara1.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
+      <form name="question" class="form" method="POST" action="http://bellydance-samara.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
         <h2>Задайте вопрос</h2> \
         <label for="name" data-required="true">Ваше имя </label> \
         <input id="name" type="text" name="name" placeholder="Например: Ольга" required> \
@@ -51,7 +51,7 @@ function handler() {
         <input id="title" type="text" name="title" placeholder="Например: Вопрос о расписании"> \
         <label for="message">Сообщение</label> \
         <textarea id="message" name="message" rows="5" placeholder="Например: Будут ли занятия в следующий четверг?"></textarea> \
-        <input type="submit" name="submit"></input> \
+        <input type="submit" name="submit-question"></input> \
         <p> - поля, обязательные для заполнения</p> \
         <div class="close"></div> \
       </form> \
@@ -70,20 +70,20 @@ function handler() {
 
     var str = ' \
     <div class="fogging"> \
-      <form name="bid" class="form" method="POST" action="http://bellydance-samara1.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
+      <form name="bid" class="form" method="POST" action="http://bellydance-samara.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
         <h2>Заполните форму</h2> \
         <label for="name" data-required="true">Ваше имя </label> \
         <input id="name" type="text" name="name" placeholder="Например: Ольга" required> \
         <label for="tel" data-required="true">Контактный телефон </label> \
-        <input id="tel" type="tel" name="email" placeholder="Например: 927-000-11-22" required> \
+        <input id="tel" type="tel" name="tel" placeholder="Например: 927-000-11-22" required> \
         <label for="dancestyle" data-required="true">Выберите направление</label> \
-        <select id="dancestyle" name="title" required> \
+        <select id="dancestyle" name="dancestyle" required> \
           <option></option> \
           <option>Восточные танцы</option> \
           <option>Фитнес</option> \
         </select> \
         <label for="halls" data-required="true">Выберите адрес зала</label> \
-        <select id="halls" name="title" required> \
+        <select id="halls" name="halls" required> \
           <option></option> \
           <option>ул. Мориса Тореза, 103 А (Парк Победы)</option> \
           <option>ул. Пушкина (Бр. Коростелевых), 280</option> \
@@ -92,7 +92,7 @@ function handler() {
         </select> \
         <label for="date">Выберите желаемую дату начала занятий</label> \
         <input id="date" type="date" name="date" min="2015-07-14" step="2"> \
-        <input type="submit" name="submit"></input> \
+        <input type="submit" name="submit-bid"></input> \
         <p> - поля, обязательные для заполнения</p> \
         <div class="close" title="Закрыть форму"></div> \
       </form> \
