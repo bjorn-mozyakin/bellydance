@@ -8,32 +8,41 @@ Author URI:
 Version: 1.0
 */
 @font-face {
-  font-family: "Lora";
-  src: url("fonts/Lora-Regular.ttf"); }
-@font-face {
-  font-family: "Nord";
-  src: url("fonts/Nord Regular.otf"); }
-@font-face {
-  font-family: "Ropa";
-  src: url("fonts/RopaSansPTT-Regular.ttf"); }
-@font-face {
   font-family: "Fira";
-  src: url("fonts/FiraSans-Regular.ttf"); }
+  src: url("fonts/firasans-regular.eot");
+  src: url("fonts/firasans-regular.eot?#iefix") format("embedded-opentype"), url("fonts/firasans-regular.woff2") format("woff2"), url("fonts/firasans-regular.woff") format("woff"), url("fonts/firasans-regular.ttf") format("truetype"), url("fonts/firasans-regular.svg#Fira") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Fira';
+  src: url("fonts/firasans-bold.eot");
+  src: url("fonts/firasans-bold.eot?#iefix") format("embedded-opentype"), url("fonts/firasans-bold.woff2") format("woff2"), url("fonts/firasans-bold.woff") format("woff"), url("fonts/firasans-bold.ttf") format("truetype"), url("fonts/firasans-bold.svg#Fira") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'Fira';
+  src: url("fonts/firasans-regularitalic.eot");
+  src: url("fonts/firasans-regularitalic.eot?#iefix") format("embedded-opentype"), url("fonts/firasans-regularitalic.woff2") format("woff2"), url("fonts/firasans-regularitalic.woff") format("woff"), url("fonts/firasans-regularitalic.ttf") format("truetype"), url("fonts/firasans-regularitalic.svg#Fira") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: 'Fira';
+  src: url("fonts/firasans-bolditalic.eot");
+  src: url("fonts/firasans-bolditalic.eot?#iefix") format("embedded-opentype"), url("fonts/firasans-bolditalic.woff2") format("woff2"), url("fonts/firasans-bolditalic.woff") format("woff"), url("fonts/firasans-bolditalic.ttf") format("truetype"), url("fonts/firasans-bolditalic.svg#Fira") format("svg");
+  font-weight: bold;
+  font-style: italic; }
 @font-face {
   font-family: "Tenor";
-  src: url("fonts/TenorSans-Regular.ttf"); }
-@font-face {
-  font-family: "Indira";
-  src: url("fonts/indira_k.ttf"); }
+  src: url("fonts/tenorsans-regular.eot");
+  src: url("fonts/tenorsans-regular.eot?#iefix") format("embedded-opentype"), url("fonts/tenorsans-regular.woff2") format("woff2"), url("fonts/tenorsans-regular.woff") format("woff"), url("fonts/tenorsans-regular.ttf") format("truetype"), url("fonts/tenorsans-regular.svg#Tenor") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 @font-face {
   font-family: "Kurale";
-  src: url("fonts/Kurale-Regular.ttf"); }
-@font-face {
-  font-family: "Rounded";
-  src: url("fonts/Rounded Elegance.ttf"); }
-@font-face {
-  font-family: "Uni";
-  src: url("fonts/Uni Sans Thin.otf"); }
+  src: url("fonts/kurale-regular.eot");
+  src: url("fonts/kurale-regular.eot?#iefix") format("embedded-opentype"), url("fonts/kurale-regular.woff2") format("woff2"), url("fonts/kurale-regular.woff") format("woff"), url("fonts/kurale-regular.ttf") format("truetype"), url("fonts/kurale-regular.svg#Kurale") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 /*    Main Layout    */
 #wrapper {
   position: relative;
@@ -43,11 +52,19 @@ Version: 1.0
   margin: 0 auto; }
 
 #header {
-  padding-top: 8px; }
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 0 0 10px 10px;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+  background: -webkit-linear-gradient(to bottom, #d2c39e, #ece6ca 30%);
+  background: -moz-linear-gradient(to bottom, #d2c39e, #ece6ca 30%);
+  background: linear-gradient(to bottom, #d2c39e, #ece6ca 30%); }
 
 #content {
   padding: 0px 30px 90px 30px;
-  background: url(images/fon.png) no-repeat bottom right; }
+  background: url(images/fon.png) no-repeat right bottom; }
 
 .sidebar-primary {
   float: right;
@@ -67,10 +84,13 @@ Version: 1.0
       margin-bottom: 40px;
       padding: 0 20px 10px 20px;
       border-radius: 6px;
+      -webkit-box-shadow: 0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+      -moz-box-shadow: 0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+      box-shadow: 0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
       background: white;
-      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+      background-image: url(images/sidebar-fon-left-top.png), url(images/sidebar-fon-right-top.png), url(images/sidebar-fon-right-bottom.png), url(images/sidebar-fon-left-bottom.png);
+      background-position: left top, right top, right bottom, left bottom;
+      background-repeat: no-repeat; }
       .sidebar-primary ul li.widget:before {
         content: "";
         position: absolute;
@@ -123,9 +143,13 @@ Version: 1.0
     background: white;
     position: relative;
     width: 310px;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+    -webkit-box-shadow: 0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+    background: white;
+    background-image: url(images/sidebar-fon-left-top.png), url(images/sidebar-fon-right-top.png), url(images/sidebar-fon-right-bottom.png), url(images/sidebar-fon-left-bottom.png);
+    background-position: left top, right top, right bottom, left bottom;
+    background-repeat: no-repeat; }
     .sidebar-primary-reviews-wrapper .sidebar-primary-reviews:before {
       content: "";
       position: absolute;
@@ -186,9 +210,9 @@ Version: 1.0
 #footer {
   box-sizing: border-box;
   position: absolute;
-  width: 100%;
   left: 0;
   bottom: 0;
+  width: 100%;
   border-top: 4px solid #f4f4f4;
   height: 80px;
   padding: 0px 30px; }
@@ -202,10 +226,10 @@ body {
   position: relative;
   height: 100%;
   /*to push footer to the down border */
-  font-family: 'Fira', Times, sans-serif;
+  font-family: 'Fira', "Kurale", Times, sans-serif;
   font-size: 16px;
   color: #444444;
-  background: linear-gradient(to left, #F3F3F3, white 5%, white 95%, #F3F3F3); }
+  background: linear-gradient(to left, rgba(170, 170, 170, 0.3), white 5%, white 95%, rgba(170, 170, 170, 0.3)); }
 
 p {
   text-align: justify; }
@@ -263,6 +287,9 @@ table {
   border-radius: 10px;
   border: 0.5px solid #cccccc;
   background: #cccccc;
+  background-image: url(images/sidebar-fon-left-top.png), url(images/sidebar-fon-right-top.png), url(images/sidebar-fon-right-bottom.png), url(images/sidebar-fon-left-bottom.png);
+  background-position: left top, right top, right bottom, left bottom;
+  background-repeat: no-repeat;
   border-collapse: separate;
   border-spacing: 2px; }
   table th {
@@ -275,7 +302,8 @@ table {
     padding: 8px 15px;
     text-align: center;
     vertical-align: middle;
-    background: white; }
+    background: white;
+    background-image: url(images/sidebar-fon-left-top.png); }
   table .lt-round {
     border-top-left-radius: 10px; }
   table .rt-round {
@@ -322,6 +350,7 @@ table {
 
 .social-buttons {
   float: right;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: bold; }
   .social-buttons a {
@@ -339,15 +368,17 @@ table {
 /* Logo */
 .logo-block {
   float: left;
-  position: relative; }
+  position: relative;
+  padding-left: 0px; }
   .logo-block .logo img {
     display: block; }
   .logo-block .title a, .logo-block .title a:hover {
     position: absolute;
-    left: 42px;
-    top: 90px;
+    left: 48px;
+    top: 106px;
     font-family: "Kurale", Times, serif;
-    letter-spacing: 1.2px;
+    font-size: 1.1rem;
+    letter-spacing: 1.4px;
     font-weight: bold;
     color: #444444;
     text-decoration: none; }
@@ -356,6 +387,7 @@ table {
   float: right;
   position: relative; }
   .info-block .phone {
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: bold; }
     .info-block .phone span {
@@ -364,7 +396,7 @@ table {
   .info-block .search {
     float: right; }
     .info-block .search .searchform {
-      margin-top: 40px;
+      margin-top: 66px;
       border-radius: 5px;
       font-size: 0;
       box-shadow: 0 0 8px silver; }
@@ -397,9 +429,9 @@ table {
 
 /* Main horizontal menu-------- */
 .main-menu {
-  font-family: "Tenor", Arial, sans-serif;
+  font-family: "Tenor", Helvetica, Arial, sans-serif;
   width: 100%;
-  margin: 30px 0 30px 0; }
+  margin: 30px 0 10px 0; }
   .main-menu ul {
     display: flex;
     display: -ms-flex;

@@ -22,10 +22,9 @@ Template Name: zrak-wp
   </aside>
   <main id="content" class="clearfix">
 
-    <section class="sidebar-news-on-main-page">
-      <?php /*get_sidebar('news-on-main-page');*/?>
+<!--     <section class="sidebar-news-on-main-page">
     </section>
-
+ -->
     <section class="hello">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <?php the_content(); ?>

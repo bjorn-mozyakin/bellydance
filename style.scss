@@ -8,55 +8,84 @@ Author URI:
 Version: 1.0
 */
 
-
-@font-face {
-  font-family: "Lora";
-  src: url('fonts/Lora-Regular.ttf');
-}
-
-@font-face {
-  font-family: "Nord";
-  src: url('fonts/Nord Regular.otf');
-}
-
-@font-face {
-  font-family: "Ropa";
-  src: url('fonts/RopaSansPTT-Regular.ttf');
-}
-
 @font-face {
   font-family: "Fira";
-  src: url('fonts/FiraSans-Regular.ttf');
+  src: url('fonts/firasans-regular.eot');
+  src:
+      url('fonts/firasans-regular.eot?#iefix') format('embedded-opentype'),
+      url('fonts/firasans-regular.woff2') format('woff2'),
+      url('fonts/firasans-regular.woff') format('woff'),
+      url('fonts/firasans-regular.ttf') format('truetype'),
+      url('fonts/firasans-regular.svg#Fira') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'Fira';
+  src: url('fonts/firasans-bold.eot');
+  src:
+    url('fonts/firasans-bold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/firasans-bold.woff2') format('woff2'),
+    url('fonts/firasans-bold.woff') format('woff'),
+    url('fonts/firasans-bold.ttf') format('truetype'),
+    url('fonts/firasans-bold.svg#Fira') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira';
+  src: url('fonts/firasans-regularitalic.eot');
+  src: url('fonts/firasans-regularitalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/firasans-regularitalic.woff2') format('woff2'),
+       url('fonts/firasans-regularitalic.woff') format('woff'),
+       url('fonts/firasans-regularitalic.ttf') format('truetype'),
+       url('fonts/firasans-regularitalic.svg#Fira') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Fira';
+  src: url('fonts/firasans-bolditalic.eot');
+  src: url('fonts/firasans-bolditalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/firasans-bolditalic.woff2') format('woff2'),
+       url('fonts/firasans-bolditalic.woff') format('woff'),
+       url('fonts/firasans-bolditalic.ttf') format('truetype'),
+       url('fonts/firasans-bolditalic.svg#Fira') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
 
 @font-face {
   font-family: "Tenor";
-  src: url('fonts/TenorSans-Regular.ttf');
+  src: url('fonts/tenorsans-regular.eot');
+  src: url('fonts/tenorsans-regular.eot?#iefix') format('embedded-opentype'),
+       url('fonts/tenorsans-regular.woff2') format('woff2'),
+       url('fonts/tenorsans-regular.woff') format('woff'),
+       url('fonts/tenorsans-regular.ttf') format('truetype'),
+       url('fonts/tenorsans-regular.svg#Tenor') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Indira";
-  src: url('fonts/indira_k.ttf');
-}
 
-@font-face {
   font-family: "Kurale";
-  src: url('fonts/Kurale-Regular.ttf');
+  src: url('fonts/kurale-regular.eot');
+  src: url('fonts/kurale-regular.eot?#iefix') format('embedded-opentype'),
+       url('fonts/kurale-regular.woff2') format('woff2'),
+       url('fonts/kurale-regular.woff') format('woff'),
+       url('fonts/kurale-regular.ttf') format('truetype'),
+       url('fonts/kurale-regular.svg#Kurale') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-
-@font-face {
-  font-family: "Rounded";
-  src: url('fonts/Rounded Elegance.ttf');
-}
-
-@font-face {
-  font-family: "Uni";
-  src: url('fonts/Uni Sans Thin.otf');
-}
-
 
 $colorBrown: rgb(148, 126, 87);
-$colorMiddleOrange: rgb(210, 195, 158); //ffa54c;
+$colorMiddleBrown: rgb(210, 195, 158); //ffa54c;
 $colorLightBrown: rgb(236, 230, 202);
 $colorWhite: rgb(255, 255, 255);
 $colorGray: rgb(244, 244, 244);
@@ -79,6 +108,7 @@ $colorBlack: rgb(68, 68, 68);
   min-height: 100%;
   margin: 0 auto;
   //outline: 1px solid red;
+
 }
 
 #wrapper-header {
@@ -91,14 +121,22 @@ $colorBlack: rgb(68, 68, 68);
 }
 
 #header {
-  padding-top: 8px;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 0 0 10px 10px;
+  -webkit-box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+  -moz-box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+  box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+  background: -webkit-linear-gradient(to bottom, $colorMiddleBrown, $colorLightBrown 30%);
+  background: -moz-linear-gradient(to bottom, $colorMiddleBrown, $colorLightBrown 30%);
+  background: linear-gradient(to bottom, $colorMiddleBrown, $colorLightBrown 30%);
 }
 
 #content {
   // float: left;
   // width: 65%;
   padding: 0px 30px 90px 30px;
-  background: url(images/fon.png) no-repeat bottom right;
+  background: url(images/fon.png) no-repeat right bottom;
   //outline: 1px solid aqua;
 }
 
@@ -120,10 +158,23 @@ $colorBlack: rgb(68, 68, 68);
       margin-bottom: 40px;
       padding: 0 20px 10px 20px;
       border-radius: 6px;
-      background: $colorWhite;
-      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-      box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+      -webkit-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+      -moz-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+      box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+
+      background: rgba(255, 255, 255, 1);
+      background-image:
+        url(images/sidebar-fon-left-top.png),
+        url(images/sidebar-fon-right-top.png),
+        url(images/sidebar-fon-right-bottom.png),
+        url(images/sidebar-fon-left-bottom.png);
+      background-position:
+        left top,
+        right top,
+        right bottom,
+        left bottom;
+      background-repeat: no-repeat;
       //outline: 1px dotted red;
 
       &:before {
@@ -153,7 +204,7 @@ $colorBlack: rgb(68, 68, 68);
         -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
         box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
         @include transform(-2deg);
-        //outline: 2px dotted orange;
+        //outline: 2px dotted Brown;
       }
 
       p:nth-child(odd) {
@@ -193,9 +244,22 @@ $colorBlack: rgb(68, 68, 68);
       //padding:10px;
       //margin:2em 10px 4em;
       //margin:2em 10px;
-      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-      box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -webkit-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+      -moz-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+      box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+      background: rgba(255, 255, 255, 1);
+      background-image:
+        url(images/sidebar-fon-left-top.png),
+        url(images/sidebar-fon-right-top.png),
+        url(images/sidebar-fon-right-bottom.png),
+        url(images/sidebar-fon-left-bottom.png);
+      background-position:
+        left top,
+        right top,
+        right bottom,
+        left bottom;
+      background-repeat: no-repeat;
+
       //outline: 1px dotted red;
 
       &:before {
@@ -230,7 +294,7 @@ $colorBlack: rgb(68, 68, 68);
             box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
 
         @include transform(-2deg);
-              //outline: 2px dotted orange;
+              //outline: 2px dotted Brown;
 
     // .sidebar-primary-review {
     //   margin: 10px 0;
@@ -242,7 +306,6 @@ $colorBlack: rgb(68, 68, 68);
       }
     }
 }
-
 
 .sidebar-news-on-main-page {
   //outline: 1px solid red;
@@ -286,9 +349,9 @@ $colorBlack: rgb(68, 68, 68);
 #footer {
   box-sizing: border-box;
   position: absolute;
-  width: 100%;
   left: 0;
   bottom: 0;
+  width: 100%;
   border-top: 4px solid $colorGray;
   height: 80px;
   padding: 0px 30px;
@@ -303,10 +366,10 @@ html {
 body {
   position: relative;
   height: 100%; /*to push footer to the down border */
-  font-family: 'Fira', Times, sans-serif;
+  font-family: 'Fira', "Kurale", Times, sans-serif;
   font-size: 16px;
   color: $colorBlack;
-  background: linear-gradient(to left, #F3F3F3, $colorWhite 5%, $colorWhite 95%, #F3F3F3);
+  background: linear-gradient(to left, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
   //background: linear-gradient(to left, $colorDarkGray, $colorWhite 2.5%,$colorWhite 97.5%, $colorDarkGray);
 }
 
@@ -385,6 +448,22 @@ table {
   border-radius: 10px;
   border: 0.5px solid $colorDarkGray;
   background: $colorDarkGray;
+//  border: 0.5px solid $colorWhite;
+//  background: $colorWhite;
+
+      background-image:
+        url(images/sidebar-fon-left-top.png),
+        url(images/sidebar-fon-right-top.png),
+        url(images/sidebar-fon-right-bottom.png),
+        url(images/sidebar-fon-left-bottom.png);
+      background-position:
+        left top,
+        right top,
+        right bottom,
+        left bottom;
+      background-repeat: no-repeat;
+//z-index: 10;
+
   border-collapse: separate;
   border-spacing: 2px;
   //outline: 1px solid green;
@@ -395,6 +474,9 @@ table {
     vertical-align: middle;
     font-weight: bold;
     background: $colorGray;
+//    background-image: url(images/sidebar-fon-left-top.png);
+    //background: rgba (244, 244, 244, 0.8);
+    //z-index: -10;
   }
 
   td {
@@ -402,6 +484,10 @@ table {
     text-align: center;
     vertical-align: middle;
     background: $colorWhite;
+    background-image: url(images/sidebar-fon-left-top.png);
+    //background-position: right bottom;
+
+    //background: rgba (0, 0, 0, 0.8);
       //outline: 1px solid red;
   }
 
@@ -458,9 +544,9 @@ table {
   border: none;
   border-radius: 5px;
   color: $colorBlack;
-  background: -webkit-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
-  background: -moz-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
-  background: linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
+  background: -webkit-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
+  background: -moz-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
+  background: linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
   box-shadow: 0px 0px 6px $colorDarkGray;
 
   &:hover {
@@ -478,9 +564,9 @@ table {
   }
 }
 
-
 .social-buttons {
   float: right;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   //outline: 2px dotted green;
@@ -506,6 +592,7 @@ table {
 .logo-block {
   float: left;
   position: relative;
+  padding-left: 0px;
 
   .logo {
     img {
@@ -516,10 +603,11 @@ table {
   .title {
     a, a:hover {
       position: absolute;
-      left: 42px;
-      top: 90px;
+      left: 48px;
+      top: 106px;
       font-family: "Kurale", Times, serif;
-      letter-spacing: 1.2px;
+      font-size: 1.1rem;
+      letter-spacing: 1.4px;
       font-weight: bold;
       color: $colorBlack;
       text-decoration: none;
@@ -530,10 +618,13 @@ table {
 .info-block {
   float: right;
   position: relative;
+  //outline: 1px solid red;
 
   .phone {
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: bold;
+    //outline: 1px dotted green;
 
     span {
       padding-left: 20px;
@@ -543,12 +634,13 @@ table {
 
   .search {
     float: right;
+    //outline: 1px dotted blue;
     // position: absolute;
     // left: 0;
     // top: 0;
 
     .searchform {
-      margin-top: 40px;
+      margin-top: 66px;
       border-radius: 5px;
       font-size: 0;
       box-shadow: 0 0 8px silver;
@@ -596,9 +688,9 @@ table {
 
 //Tenor, Rounded
 .main-menu {
-  font-family: "Tenor", Arial, sans-serif;
+  font-family: "Tenor", Helvetica, Arial, sans-serif;
   width: 100%;
-  margin: 30px 0 30px 0;
+  margin: 30px 0 10px 0;
   //outline: 1px solid green;
 
   ul {
@@ -620,7 +712,7 @@ table {
       flex-grow: 1;
       -webkit-flex-grow: 1;
       -ms-flex-grow: 1;
-        //border: 3px solid orange;
+        //border: 3px solid Brown;
         text-align: center;
       a {
         //padding: 0 10px;
@@ -692,7 +784,7 @@ table {
   width: 100%;
   //clear: both;
 
-  a{
+  a {
     float: left;
     position: relative;
     width: 120px;
@@ -708,7 +800,7 @@ table {
 
   }
 
-  a:after{
+  a:after {
     content: '';
     //display:block;
     position: absolute;
@@ -717,6 +809,8 @@ table {
     width: 120px;
     height: 90px;
     border-radius: 5px;
+    // -webkit-filter: grayscale(1);
+    // filter: gray;
     transition: opacity .5s;
     background: -webkit-radial-gradient(transparent, rgba(0,0,0,0.4));
     background: -moz-radial-gradient(transparent, rgba(0,0,0,0.4));
@@ -726,8 +820,10 @@ table {
     //outline: 2px solid green;
   }
 
-  a:hover:after{
+  a:hover:after {
     opacity: 0;
+    // -webkit-filter: grayscale(0);
+    // filter: none;
   }
 }
 
@@ -838,9 +934,9 @@ table {
     text-align: left;
     padding: 10px 25px;
     border-radius: 8px;
-    background: -webkit-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
-    background: -moz-linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
-    background: linear-gradient(to top, $colorMiddleOrange, $colorLightBrown);
+    background: -webkit-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
+    background: -moz-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
+    background: linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
 
     h2 {
       margin-bottom: 20px;
@@ -901,7 +997,6 @@ table {
     }
   }
 }
-
 
 /* Page Reviewes (Отзывы)*/
 .reviewes-container {
