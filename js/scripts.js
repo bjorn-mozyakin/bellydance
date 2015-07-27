@@ -2,38 +2,19 @@ document.addEventListener('DOMContentLoaded', handler);
 
 function handler() {
 
-  /*Page Contacts - Form Question*/
-  var question = document.querySelector('.question');
-  if (question) {
-    question.addEventListener('click', showFormQuestion);
+/* Constructor for Form Question BEGIN*/
+  function Question(options) {
+    this.elem = options.elem;
+    if (this.elem) {
+      this.elem.onclick = this.onclick.bind(this);
+    }
   }
 
-  var bid = document.querySelector('.bid');
-  if (bid) {
-    bid.addEventListener('click', showFormBid);
+  Question.prototype.onclick = function(e) {
+    this.showFormQuestion();
   }
 
-  var galleries =  document.querySelectorAll('.gallery');
-  if (galleries) {
-
-    [].forEach.call(galleries, function(gallery) {
-
-      var images = gallery.querySelectorAll('a');
-      [].forEach.call(images, function(img) {
-        (function(img) {
-          img.addEventListener('click', showImg);
-        })(img);
-      });
-
-    });
-
-    window.addEventListener('resize', positionNavElems);
-  }
-
-  document.addEventListener('click', hideAll);
-  document.addEventListener('keydown', hideAll);
-
-  function showFormQuestion(e) {
+  Question.prototype.showFormQuestion = function(e) {
     e = e || window.event;
     var target = e.target || e.srcElement; //for IE8
 
@@ -61,8 +42,21 @@ function handler() {
 
     positionNavElems();
   }
+/* END Constructor for Form Question */
 
-  function showFormBid(e) {
+/* Constructor for Form Bid BEGIN*/
+  function Bid(options) {
+    this.elem = options.elem;
+    if (this.elem) {
+      this.elem.onclick = this.onclick.bind(this);
+    }
+  }
+
+  Bid.prototype.onclick = function(e) {
+    this.showFormBid();
+  }
+
+  Bid.prototype.showFormBid = function(e) {
     e = e || window.event;
     var target = e.target || e.srcElement; //for IE8
 
@@ -122,14 +116,33 @@ function handler() {
       }
     }
   }
+/* END Constructor for Form Bid */
 
-  function showImg(e) {
+/* Constructor for Image Gallery BEGIN */
+  function Gallery(options) {
+    this.elem = options.elem;
+
+    if (this.elem) {
+      imgs = this.elem.querySelectorAll('img');
+      this.imgCount = imgs.length;
+
+      this.elem.onclick = this.onclick.bind(this);
+    }
+  }
+
+  Gallery.prototype.onclick = function(e) {
+    if (e.target.tagName != 'A') return;
+
+    this.showImg(e);
+
+    currentGallery = this;
+  }
+
+  Gallery.prototype.showImg = function(e) {
     e = e || window.event;
     var target = e.target || e.srcElement; //for IE8
 
     e.preventDefault();
-
-    var imgCount = target.parentNode.querySelectorAll('a').length;
 
     document.body.style.overflow = "hidden";
 
@@ -152,53 +165,14 @@ function handler() {
 
     largeImg.addEventListener('load', showGalleryNav);
 
-    //document.removeEventListener("keydown", changeImg);
-    //document.addEventListener("keydown", changeImg);
-    document.onkeydown = null;
-    document.onkeydown = changeImg;
-
-    arrows.addEventListener("click", changeImg);
-
-    function changeImg(e) {
-      e = e || window.event;
-      var target = e.target || e.srcElement; //for IE8
-
-      if (e.keyCode && e.keyCode != '37' && e.keyCode != '39') return;
-      if (target.classList.contains('arrows')) return;
-
-      var img = document.querySelector('.large-img');
-      var src = img.getAttribute('src');
-      var numberPos = src.lastIndexOf('.jpg') - 1;
-
-      if ((target.classList.contains('arrow-left')) || (e.keyCode == "37")) {
-        var newPos = +src.substr(numberPos, 1) - 1;
-
-        if (newPos < 1) {
-          newPos = imgCount;
-        }
-      }
-
-      if ((target.classList.contains('arrow-right')) || (e.keyCode == "39")) {
-        var newPos = +src.substr(numberPos, 1) + 1;
-
-        if (newPos > imgCount) {
-          newPos = 1;
-        }
-      }
-
-      var newsrc = src.slice(0, numberPos) + newPos + src.slice(numberPos + 1);
-      img.setAttribute('src', newsrc);
-    }
-
     function showGalleryNav() {
       arrows.style.display = "inline-block";
       close.style.display = "inline-block";
-      //arrows.style.marginTop = largeImg.offsetHeight / 2 - parseFloat(getComputedStyle(arrows).height) - 10 + 'px';
-      //arrows.style.marginLeft = 0 - largeImg.clientWidth / 2 + 'px';
-      //arrows.style.width = largeImg.clientWidth + 'px';
       positionNavElems();
     }
   }
+/* END Constructor for Image Gallery */
+
 
   function positionNavElems() {
     if (!document.querySelector('.fogging')) return;
@@ -226,19 +200,106 @@ function handler() {
     close.style.marginTop = 0 - mainElem.clientHeight / 2 + 'px';
   }
 
-  function hideAll(e) {
+/* All document handlers BEGIN*/
+  function keyboardHandler(e) {
     e = e || window.event;
     var target = e.target || e.srcElement; //for IE8
 
     if (!document.querySelector('.fogging')) return;
 
-    if ((e.keyCode == 27) || (target.classList.contains('fogging')) || (target.classList.contains('close'))) {
-      document.querySelector('.fogging').remove();
-      document.body.style.overflow = "";
+    if (e.keyCode == 27) {
+      hideAll();
+      return;
+    }
 
-      // if (!document.querySelector('.arrows')) return;
-      // document.querySelector('.arrows').remove();
+    if (e.keyCode == 37 || e.keyCode == 39) {
+      changeImg.call(currentGallery, e);
     }
   }
+
+  function mouseHandler(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement; //for IE8
+
+    if (!document.querySelector('.fogging')) return;
+
+    if ((target.classList.contains('fogging')) || (target.classList.contains('close'))) {
+      hideAll();
+      return;
+    }
+
+    if ( (target.classList.contains('arrow-left')) || (target.classList.contains('arrow-right')) ) {
+      changeImg.call(currentGallery, e);
+    }
+  }
+
+  function hideAll() {
+    document.querySelector('.fogging').remove();
+    document.body.style.overflow = "";
+  }
+
+  function changeImg(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement; //for IE8
+
+    //if (e.keyCode && e.keyCode != '37' && e.keyCode != '39') return;
+    if (!document.querySelector('.large-img')) return;
+    if (target.classList.contains('arrows')) return;
+
+    var img = document.querySelector('.large-img');
+    var src = img.getAttribute('src');
+    var numberPos = src.lastIndexOf('.jpg') - 1;
+
+    if ((target.classList.contains('arrow-left')) || (e.keyCode == 37)) {
+      var newPos = +src.substr(numberPos, 1) - 1;
+
+      if (newPos < 1) {
+        newPos = this.imgCount;
+      }
+    }
+
+    if ((target.classList.contains('arrow-right')) || (e.keyCode == 39)) {
+      var newPos = +src.substr(numberPos, 1) + 1;
+
+      if (newPos > this.imgCount) {
+        newPos = 1;
+      }
+    }
+
+    var newsrc = src.slice(0, numberPos) + newPos + src.slice(numberPos + 1);
+    img.setAttribute('src', newsrc);
+  }
+/* END All document handlers */
+
+
+  if (document.querySelector('.question')) {
+    var question = new Question({
+      elem: document.querySelector('.question')
+    });
+  }
+
+  if (document.querySelector('.bid')) {
+    var bid = new Bid({
+      elem: document.querySelector('.bid')
+    });
+  }
+
+  if (document.querySelector('.gallery')) {
+    var docsBondarenko = new Gallery({
+      elem: document.querySelector('.docs-bondarenko')
+    });
+
+    var docsBykova = new Gallery({
+      elem: document.querySelector('.docs-bykova')
+    });
+
+    var docsBragina = new Gallery({
+      elem: document.querySelector('.docs-bragina')
+    });
+  }
+  var currentGallery;
+
+  document.addEventListener('keydown', keyboardHandler);
+  document.addEventListener('click', mouseHandler);
 
 }
