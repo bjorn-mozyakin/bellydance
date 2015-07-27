@@ -12,6 +12,24 @@ function handler() {
 
   Question.prototype.onclick = function(e) {
     this.showFormQuestion();
+
+    document.querySelector('.form').addEventListener('submit', sendForm);
+
+    function sendForm(e){
+      e.preventDefault();
+
+      $.ajax({
+        url: "http://bellydance-samara1.ru/wp-content/themes/zrak-wp-dance/post.php",
+        type: "POST",
+        data: $('.form').serialize(),
+        success: function(response) {
+          showMsgAfterSending('Спасибо, ваше письмо отправлено');
+        },
+        error: function(response) {
+          showMsgAfterSending('К сожалению ваше письмо не удалось отправить. Попробуйте еще раз');
+       }
+      });
+    }
   }
 
   Question.prototype.showFormQuestion = function(e) {
@@ -22,7 +40,7 @@ function handler() {
 
     var str = ' \
     <div class="fogging"> \
-      <form name="question" class="form" method="POST" action="http://bellydance-samara.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
+      <form name="question" class="form form-question" method="POST" action="http://bellydance-samara.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
         <h2>Задайте вопрос</h2> \
         <label for="name" data-required="true">Ваше имя </label> \
         <input id="name" type="text" name="name" placeholder="Например: Ольга" required> \
@@ -54,6 +72,24 @@ function handler() {
 
   Bid.prototype.onclick = function(e) {
     this.showFormBid();
+
+    document.querySelector('.form').addEventListener('submit', sendForm);
+
+    function sendForm(e){
+      e.preventDefault();
+
+      $.ajax({
+        url: "http://bellydance-samara1.ru/wp-content/themes/zrak-wp-dance/post.php",
+        type: "POST",
+        data: $('.form').serialize(),
+        success: function(response) {
+          showMsgAfterSending('Спасибо, ваше письмо отправлено');
+        },
+        error: function(response) {
+          showMsgAfterSending('К сожалению ваше письмо не удалось отправить. Попробуйте еще раз');
+       }
+      });
+    }
   }
 
   Bid.prototype.showFormBid = function(e) {
@@ -80,9 +116,9 @@ function handler() {
         <select id="halls" name="halls" required> \
           <option></option> \
           <option>ул. Мориса Тореза, 103 А (Парк Победы)</option> \
-          <option>ул. Пушкина (Бр. Коростелевых), 280</option> \
-          <option>ул. Стара-Загора, 164</option> \
-          <option>пр-т. Металлургов, 75</option> \
+          <option>ул. Пушкина, 280 (клуб "Планета детства")</option> \
+          <option>ул. Стара-Загора, 164 (клуб "Планета детства")</option> \
+          <option>пр-т. Металлургов, 75 (ДК Металлург)</option> \
         </select> \
         <label for="date">Выберите желаемую дату начала занятий</label> \
         <input id="date" type="date" name="date" min="2015-07-14" step="2"> \
@@ -173,6 +209,20 @@ function handler() {
   }
 /* END Constructor for Image Gallery */
 
+/* Common functions BEGIN */
+  function showMsgAfterSending(message) {
+    document.querySelector('.form').remove();
+
+    var str = ' \
+      <form name="after-submit" class="form" method="" action=""> \
+        <h6>' + message + '</h6> \
+        <div class="close"></div> \
+      </form> \
+    ';
+    document.querySelector('.fogging').insertAdjacentHTML('beforeEnd', str);
+
+    positionNavElems();
+  }
 
   function positionNavElems() {
     if (!document.querySelector('.fogging')) return;
@@ -199,6 +249,8 @@ function handler() {
     close.style.marginLeft = mainElem.clientWidth / 2 - parseInt(getComputedStyle(close).width) + 'px';
     close.style.marginTop = 0 - mainElem.clientHeight / 2 + 'px';
   }
+/* END Common functions */
+
 
 /* All document handlers BEGIN*/
   function keyboardHandler(e) {
@@ -313,11 +365,13 @@ function handler() {
       elem: document.querySelector('.hall-metallurg')
     });
   }
+
   var currentGallery;
 
   document.addEventListener('keydown', keyboardHandler);
   document.addEventListener('click', mouseHandler);
 
   window.addEventListener('resize', positionNavElems);
+
 
 }

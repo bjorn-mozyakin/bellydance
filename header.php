@@ -15,16 +15,16 @@
 <link rel="shortcut icon" type="image/png" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
-<script src="<?php bloginfo('template_url'); ?>/js/scripts.js"></script>
-<!-- Adding Google font to the site -->
-<!--<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen,projection" />  -->
 
 <?php wp_head(); ?>
 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <!--Imitation media quieries для IE8-->
 <!--[if lt IE 9]>
 <script src="<?php bloginfo('template_url'); ?>/js/respond.min.js"></script>
 <![endif]-->
+
+<script src="<?php bloginfo('template_url'); ?>/js/scripts.js"></script>
 
 </head>
 <body>
