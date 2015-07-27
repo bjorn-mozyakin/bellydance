@@ -296,10 +296,28 @@ function handler() {
     var docsBragina = new Gallery({
       elem: document.querySelector('.docs-bragina')
     });
+
+    var hallDvorec = new Gallery({
+      elem: document.querySelector('.hall-dvorec')
+    });
+
+    var hallPushkina = new Gallery({
+      elem: document.querySelector('.hall-pushkina')
+    });
+
+    var hallZagora = new Gallery({
+      elem: document.querySelector('.hall-zagora')
+    });
+
+    var hallMetallurg = new Gallery({
+      elem: document.querySelector('.hall-metallurg')
+    });
   }
   var currentGallery;
 
   document.addEventListener('keydown', keyboardHandler);
   document.addEventListener('click', mouseHandler);
+
+  window.addEventListener('resize', positionNavElems);
 
 }
