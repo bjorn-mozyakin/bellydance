@@ -58,7 +58,6 @@ Version: 1.0
   font-style: italic;
 }
 
-
 @font-face {
   font-family: "Tenor";
   src: url('fonts/tenorsans-regular.eot');
@@ -72,7 +71,6 @@ Version: 1.0
 }
 
 @font-face {
-
   font-family: "Kurale";
   src: url('fonts/kurale-regular.eot');
   src: url('fonts/kurale-regular.eot?#iefix') format('embedded-opentype'),
@@ -108,7 +106,6 @@ $colorBlack: rgb(68, 68, 68);
   min-height: 100%;
   margin: 0 auto;
   //outline: 1px solid red;
-
 }
 
 #wrapper-header {
@@ -127,18 +124,9 @@ $colorBlack: rgb(68, 68, 68);
   -webkit-box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
   -moz-box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
   box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
-
-      //   -webkit-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
-      // -moz-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
-      // box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
-
-  // background: -webkit-linear-gradient(to bottom, $colorMiddleBrown, $colorLightBrown 30%);
-  // background: -moz-linear-gradient(to bottom, $colorMiddleBrown, $colorLightBrown 30%);
-   background: linear-gradient(to bottom, rgba(210, 195, 158, 0.8), rgba(236, 230, 202, 0.6) 30%);
-
-$colorMiddleBrown: rgba(210, 195, 158, 0.8); //ffa54c;
-$colorLightBrown: rgba(236, 230, 202, 0.8);
-
+  background: -webkit-linear-gradient(to bottom, rgba(210, 195, 158, 0.8), rgba(236, 230, 202, 0.6) 30%);
+  background: -moz-linear-gradient(to bottom, rgba(210, 195, 158, 0.8), rgba(236, 230, 202, 0.6) 30%);
+  background: linear-gradient(to bottom, rgba(210, 195, 158, 0.8), rgba(236, 230, 202, 0.6) 30%);
 }
 
 #content {
@@ -167,11 +155,9 @@ $colorLightBrown: rgba(236, 230, 202, 0.8);
       margin-bottom: 40px;
       padding: 0 20px 10px 20px;
       border-radius: 6px;
-
       -webkit-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
       -moz-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
       box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
-
       background: rgba(255, 255, 255, 1);
       background-image:
         url(images/sidebar-fon-left-top.png),
@@ -230,33 +216,18 @@ $colorLightBrown: rgba(236, 230, 202, 0.8);
 }
 
 .sidebar-primary-reviews-wrapper {
-
   @include transform(-2deg);
 
   .sidebar-primary-reviews {
-    // padding: 0 20px 10px 20px;
-    // border: 1px solid $colorDarkGray;
-    // border-radius: 6px;
-    // background: $colorWhite;
-    // box-shadow: 0 0 4px silver;
-
-       margin-bottom: 20px;
-       padding: 0 20px 10px 20px;
-      // border: 1px solid $colorDarkGray;
-       border-radius: 6px;
-       background: $colorWhite;
-      // box-shadow: 0 0 4px silver;
-
       position:relative;
       width:310px;
-      //height: 100%;
-      //padding:10px;
-      //margin:2em 10px 4em;
-      //margin:2em 10px;
+      margin-bottom: 20px;
+      padding: 0 20px 10px 20px;
+      border-radius: 6px;
       -webkit-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
       -moz-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
       box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
-      background: rgba(255, 255, 255, 1);
+      background: $colorWhite;
       background-image:
         url(images/sidebar-fon-left-top.png),
         url(images/sidebar-fon-right-top.png),
@@ -268,7 +239,6 @@ $colorLightBrown: rgba(236, 230, 202, 0.8);
         right bottom,
         left bottom;
       background-repeat: no-repeat;
-
       //outline: 1px dotted red;
 
       &:before {
@@ -279,46 +249,34 @@ $colorLightBrown: rgba(236, 230, 202, 0.8);
         width:95%;
         height:95%;
         z-index:-2;
-        //max-width:280px;
-
-      -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-         -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-              box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-          @include transform(2deg);
-              //outline: 2px dotted yellow;
-        }
+        -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        @include transform(2deg);
+        //outline: 2px dotted yellow;
+      }
 
       &:after {
         content:"";
         position:absolute;
         bottom:15px;
         right:10px;
-        z-index:-2;
-        //left: 0;
         width:95%;
         height:95%;
         //max-width:280px;
-    -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-       -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-            box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-
+        -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        z-index:-2;
         @include transform(-2deg);
-              //outline: 2px dotted Brown;
-
-    // .sidebar-primary-review {
-    //   margin: 10px 0;
-    //   padding: 10px;
-    //   border: 1px solid $colorDarkGray;
-    //   border-radius: 10px;
-    //   background: $colorGray;
-    // }
+        //outline: 2px dotted Brown;
       }
     }
 }
 
 .sidebar-news-on-main-page {
-  //outline: 1px solid red;
   margin-right: 350px;
+  //outline: 1px solid red;
 
   ul {
     margin: 0;
@@ -378,6 +336,8 @@ body {
   font-family: 'Fira', "Kurale", Times, sans-serif;
   font-size: 16px;
   color: $colorBlack;
+  background: -webkit-linear-gradient(to left, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
+  background: -moz-linear-gradient(to left, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
   background: linear-gradient(to left, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
   //background: linear-gradient(to left, $colorDarkGray, $colorWhite 2.5%,$colorWhite 97.5%, $colorDarkGray);
 }
@@ -390,11 +350,12 @@ a {
   color: $colorBrown;
   font-weight: bold;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-a:hover {
-  text-decoration: underline;
-}
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
@@ -409,7 +370,6 @@ h1, h2, h3, h4, h5, h6 {
     color: $colorBlack;
     text-decoration: none;
   }
-
 }
 
 h1 {
@@ -457,22 +417,6 @@ table {
   border-radius: 10px;
   border: 0.5px solid $colorDarkGray;
   background: $colorDarkGray;
-//  border: 0.5px solid $colorWhite;
-//  background: $colorWhite;
-
-      background-image:
-        url(images/sidebar-fon-left-top.png),
-        url(images/sidebar-fon-right-top.png),
-        url(images/sidebar-fon-right-bottom.png),
-        url(images/sidebar-fon-left-bottom.png);
-      background-position:
-        left top,
-        right top,
-        right bottom,
-        left bottom;
-      background-repeat: no-repeat;
-//z-index: 10;
-
   border-collapse: separate;
   border-spacing: 2px;
   //outline: 1px solid green;
@@ -483,9 +427,6 @@ table {
     vertical-align: middle;
     font-weight: bold;
     background: $colorGray;
-//    background-image: url(images/sidebar-fon-left-top.png);
-    //background: rgba (244, 244, 244, 0.8);
-    //z-index: -10;
   }
 
   td {
@@ -493,11 +434,7 @@ table {
     text-align: center;
     vertical-align: middle;
     background: $colorWhite;
-    background-image: url(images/sidebar-fon-left-top.png);
-    //background-position: right bottom;
-
-    //background: rgba (0, 0, 0, 0.8);
-      //outline: 1px solid red;
+    background-image: url(images/table-fon.png);
   }
 
   .lt-round{
@@ -533,7 +470,6 @@ table {
       border-bottom-right-radius: 10px;
     }
   }
-
 }
 
 .more-link {
@@ -644,9 +580,6 @@ table {
   .search {
     float: right;
     //outline: 1px dotted blue;
-    // position: absolute;
-    // left: 0;
-    // top: 0;
 
     .searchform {
       margin-top: 66px;
@@ -658,7 +591,6 @@ table {
         box-sizing: border-box;
         height: 30px;
         width: 140px;
-        //margin: 0;
         padding-left: 6px;
         border: 1px solid $colorBlack;
         border-radius: 5px 0 0 5px;
@@ -721,8 +653,8 @@ table {
       flex-grow: 1;
       -webkit-flex-grow: 1;
       -ms-flex-grow: 1;
-        //border: 3px solid Brown;
-        text-align: center;
+      text-align: center;
+
       a {
         //padding: 0 10px;
         padding-bottom: 3px;
@@ -732,6 +664,7 @@ table {
         color: $colorBlack;
         //outline: 1px solid lime;
       }
+
       a:hover {
         border-bottom: 2px solid $colorBlack;
       }
@@ -751,6 +684,7 @@ table {
   display: table;
   clear: both;
 }
+
 
 /*
   Pages
@@ -783,7 +717,6 @@ table {
 
   .teacher-description {
     margin-left: 220px;
-    //text-align: justify;
     //outline: 5px solid red;
   }
 }
@@ -791,7 +724,6 @@ table {
 
 .gallery {
   width: 100%;
-  //clear: both;
 
   a {
     float: left;
@@ -801,12 +733,10 @@ table {
     margin: 0 20px 20px 0;
     border-radius: 5px;
     overflow: hidden;
-    //box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 
     img {
       border: 2px solid $colorDarkGray;
     }
-
   }
 
   a:after {
@@ -845,17 +775,12 @@ table {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
 
-  //overflow: auto;
-  //white-space: nowrap;
-  //font-size: 0;
-
   &:before {
     content: '';
     height: 100%;
     display: inline-block;
     vertical-align: middle;
     //outline: 3px solid green;
-    //background: yellow;
   }
 
   .close {
@@ -868,9 +793,7 @@ table {
     background: url(images/icons/close.png) no-repeat;
     font-size: 0;
     cursor: pointer;
-
     //outline: 1px dashed red;
-    //z-index: 10;
 
     &:hover {
       background: url(images/icons/close-hover.png) no-repeat;
@@ -939,7 +862,6 @@ table {
   .form {
     display: inline-block;
     vertical-align: middle;
-    //white-space: normal;
     text-align: left;
     padding: 10px 25px;
     border-radius: 8px;
@@ -952,7 +874,6 @@ table {
     }
 
     label[data-required="true"]:after {
-      //display: block;
       content: "*";
       color: red;
     }
