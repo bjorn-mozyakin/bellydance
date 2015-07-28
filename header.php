@@ -18,7 +18,7 @@
 
 <?php wp_head(); ?>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <!--Imitation media quieries для IE8-->
 <!--[if lt IE 9]>
 <script src="<?php bloginfo('template_url'); ?>/js/respond.min.js"></script>

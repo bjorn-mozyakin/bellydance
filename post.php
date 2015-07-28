@@ -1,11 +1,9 @@
 <?php
-// если была нажата кнопка "Отправить"
-if($_POST['submit-question']) {
+if($_POST['submit'] == 'question') {
   // trim() - убираем все лишние пробелы и переносы строк,
   // htmlspecialchars() - преобразует специальные символы в HTML сущности,
   // будем считать для того,
   // чтобы простейшие попытки взломать наш сайт обломались,
-  $backurl="http://bellydance-samara.ru/contacts/";
   $name = htmlspecialchars(trim($_POST['name']));
   $email = htmlspecialchars(trim($_POST['email']));
   $title = htmlspecialchars(trim($_POST['title']));
@@ -35,16 +33,14 @@ if($_POST['submit-question']) {
 //  if(TRUE === $mail) echo 'Thanks. Ваше сообщение успешно отправлено!';
 //  else echo 'Sorry. Произошла ошибка при отправке сообщения.';
   echo 'Ваш вопрос успешно отправлен!';
-
 }
 
 
-if($_POST['submit-bid']) {
+if($_POST['submit'] == 'bid') {
   // trim() - убираем все лишние пробелы и переносы строк,
   // htmlspecialchars() - преобразует специальные символы в HTML сущности,
   // будем считать для того,
   // чтобы простейшие попытки взломать наш сайт обломались,
-  $backurl="http://bellydance-samara.ru/contacts/";
   $name = htmlspecialchars(trim($_POST['name']));
   $tel = htmlspecialchars(trim($_POST['tel']));
   $dancestyle = htmlspecialchars(trim($_POST['dancestyle']));
@@ -72,11 +68,7 @@ if($_POST['submit-bid']) {
   // функция, которая отправляет наше письмо.
   mail($to, $subject, $message, $headers);
 
-  //проверяем отправку
-//  if(TRUE === $mail) echo 'Thanks. Ваше сообщение успешно отправлено!';
-//  else echo 'Sorry. Произошла ошибка при отправке сообщения.';
   echo 'Ваша заявка успешно отправлена!';
-
 }
 
 ?>

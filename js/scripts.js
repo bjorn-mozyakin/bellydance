@@ -12,24 +12,7 @@ function handler() {
 
   Question.prototype.onclick = function(e) {
     this.showFormQuestion();
-
     document.querySelector('.form').addEventListener('submit', sendForm);
-
-    function sendForm(e){
-      e.preventDefault();
-
-      $.ajax({
-        url: "http://bellydance-samara1.ru/wp-content/themes/zrak-wp-dance/post.php",
-        type: "POST",
-        data: $('.form').serialize(),
-        success: function(response) {
-          showMsgAfterSending('Спасибо, ваше письмо отправлено');
-        },
-        error: function(response) {
-          showMsgAfterSending('К сожалению ваше письмо не удалось отправить. Попробуйте еще раз');
-       }
-      });
-    }
   }
 
   Question.prototype.showFormQuestion = function(e) {
@@ -40,7 +23,7 @@ function handler() {
 
     var str = ' \
     <div class="fogging"> \
-      <form name="question" class="form form-question" method="POST" action="http://bellydance-samara.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
+      <form name="question" class="form" method="post" action="http://bellydance-samara.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete data-name="question"> \
         <h2>Задайте вопрос</h2> \
         <label for="name" data-required="true">Ваше имя </label> \
         <input id="name" type="text" name="name" placeholder="Например: Ольга" required> \
@@ -50,7 +33,7 @@ function handler() {
         <input id="title" type="text" name="title" placeholder="Например: Вопрос о расписании"> \
         <label for="message">Сообщение</label> \
         <textarea id="message" name="message" rows="5" placeholder="Например: Будут ли занятия в следующий четверг?"></textarea> \
-        <input type="submit" name="submit-question"></input> \
+        <input type="submit" name="submit"></input> \
         <p> - поля, обязательные для заполнения</p> \
         <div class="close"></div> \
       </form> \
@@ -62,6 +45,7 @@ function handler() {
   }
 /* END Constructor for Form Question */
 
+
 /* Constructor for Form Bid BEGIN*/
   function Bid(options) {
     this.elem = options.elem;
@@ -72,24 +56,7 @@ function handler() {
 
   Bid.prototype.onclick = function(e) {
     this.showFormBid();
-
     document.querySelector('.form').addEventListener('submit', sendForm);
-
-    function sendForm(e){
-      e.preventDefault();
-
-      $.ajax({
-        url: "http://bellydance-samara1.ru/wp-content/themes/zrak-wp-dance/post.php",
-        type: "POST",
-        data: $('.form').serialize(),
-        success: function(response) {
-          showMsgAfterSending('Спасибо, ваше письмо отправлено');
-        },
-        error: function(response) {
-          showMsgAfterSending('К сожалению ваше письмо не удалось отправить. Попробуйте еще раз');
-       }
-      });
-    }
   }
 
   Bid.prototype.showFormBid = function(e) {
@@ -100,7 +67,7 @@ function handler() {
 
     var str = ' \
     <div class="fogging"> \
-      <form name="bid" class="form" method="POST" action="http://bellydance-samara.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete> \
+      <form name="bid" class="form" method="post" action="http://bellydance-samara.ru/wp-content/themes/zrak-wp-dance/post.php" autocmplete  data-name="bid"> \
         <h2>Заполните форму</h2> \
         <label for="name" data-required="true">Ваше имя </label> \
         <input id="name" type="text" name="name" placeholder="Например: Ольга" required> \
@@ -122,7 +89,7 @@ function handler() {
         </select> \
         <label for="date">Выберите желаемую дату начала занятий</label> \
         <input id="date" type="date" name="date" min="2015-07-14" step="2"> \
-        <input type="submit" name="submit-bid"></input> \
+        <input type="submit" name="submit"></input> \
         <p> - поля, обязательные для заполнения</p> \
         <div class="close" title="Закрыть форму"></div> \
       </form> \
@@ -153,6 +120,46 @@ function handler() {
     }
   }
 /* END Constructor for Form Bid */
+
+
+/* Common functions for Forms BEGIN */
+  function sendForm(e){
+    e.preventDefault(); //STOP default action
+
+    var formName = document.querySelector('.form').getAttribute('data-name');
+    console.log(formName);
+    console.log($(this).serialize());
+    $.ajax(
+    {
+      url : $(this).attr("action"),
+      type: "POST",
+      data : $(this).serialize() + "&submit=" + formName,
+      success:function(data, textStatus, jqXHR)
+        {
+          showMsgAfterSending('Спасибо, ваше письмо отправлено');
+        },
+      error: function(jqXHR, textStatus, errorThrown)
+        {
+          showMsgAfterSending('К сожалению ваше письмо не удалось отправить. Попробуйте еще раз');
+        }
+    });
+  }
+
+  function showMsgAfterSending(message) {
+    document.querySelector('.form').remove();
+
+    var str = ' \
+      <form name="after-submit" class="form" method="" action=""> \
+        <h6>' + message + '</h6> \
+        <div class="close"></div> \
+      </form> \
+    ';
+    document.querySelector('.fogging').insertAdjacentHTML('beforeEnd', str);
+
+    positionNavElems();
+  }
+/* END Common functions for Forms */
+
 
 /* Constructor for Image Gallery BEGIN */
   function Gallery(options) {
@@ -209,21 +216,8 @@ function handler() {
   }
 /* END Constructor for Image Gallery */
 
+
 /* Common functions BEGIN */
-  function showMsgAfterSending(message) {
-    document.querySelector('.form').remove();
-
-    var str = ' \
-      <form name="after-submit" class="form" method="" action=""> \
-        <h6>' + message + '</h6> \
-        <div class="close"></div> \
-      </form> \
-    ';
-    document.querySelector('.fogging').insertAdjacentHTML('beforeEnd', str);
-
-    positionNavElems();
-  }
-
   function positionNavElems() {
     if (!document.querySelector('.fogging')) return;
 
@@ -372,6 +366,4 @@ function handler() {
   document.addEventListener('click', mouseHandler);
 
   window.addEventListener('resize', positionNavElems);
-
-
 }
