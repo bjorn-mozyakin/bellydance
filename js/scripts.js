@@ -11,7 +11,7 @@ function handler() {
   }
 
   Question.prototype.onclick = function(e) {
-    this.showFormQuestion();
+    this.showFormQuestion(e);
     document.querySelector('.form').addEventListener('submit', sendForm);
   }
 
@@ -55,7 +55,7 @@ function handler() {
   }
 
   Bid.prototype.onclick = function(e) {
-    this.showFormBid();
+    this.showFormBid(e);
     document.querySelector('.form').addEventListener('submit', sendForm);
   }
 
@@ -88,7 +88,7 @@ function handler() {
           <option>пр-т. Металлургов, 75 (ДК Металлург)</option> \
         </select> \
         <label for="date">Выберите желаемую дату начала занятий</label> \
-        <input id="date" type="date" name="date" min="2015-07-14" step="2"> \
+        <input id="date" type="date" name="date"> \
         <input type="submit" name="submit"></input> \
         <p> - поля, обязательные для заполнения</p> \
         <div class="close" title="Закрыть форму"></div> \
