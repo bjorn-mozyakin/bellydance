@@ -988,12 +988,49 @@ table {
 
 
 /* Page Contacts (Контакты) */
-.halls {
-  td {
-    width: 50%;
+.contacts {
+  tr:first-child th {
+    border-top-left-radius: 10px;
+  }
+
+  tr:last-child th {
+    border-bottom-left-radius: 10px;
+  }
+
+  tr:first-child td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 }
 
+.hall {
+  float: left;
+  width: 49.5%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 2px solid $colorDarkGray;
+  text-align: center;
+  background: $colorWhite;
+  background-image: url(images/table-fon.png);
+
+  &.hall-dvorec {
+    margin: 0 1% 1% 0;
+  }
+
+  &.hall-zagora {
+    margin-right: 1%;
+  }
+
+  div {
+    box-sizing: border-box;
+    padding: 10px;
+    //outline: 2px dotted green;
+
+    &.hall-title {
+      border-bottom: 2px solid $colorDarkGray;
+    }
+  }
+}
 
 @media (max-width: 980px) {
   .main-menu {
@@ -1059,6 +1096,33 @@ table {
       }
     }
   }
+
+  .contacts {
+    tr:first-child td:last-child {
+      display: none;
+    }
+
+    tr:first-child td {
+      border-top-right-radius: 10px;
+    }
+    tr:last-child td {
+      border-bottom-right-radius: 10px;
+    }
+  }
+
+  .hall {
+    width: 100%;
+    margin-top: 1%;
+
+   &.hall-dvorec {
+      margin: 1% 0 0 0;
+    }
+
+    &.hall-zagora {
+      margin-right: 0;
+    }
+  }
+
 }
 
 @media (max-width: 620px) {
@@ -1104,4 +1168,18 @@ table {
   }
 
 }
+
+@media (max-width: 480px) {
+  .contacts {
+    font-size: 0.8rem;
+  }
+  }
+
+
+@media (max-width: 390px) {
+  .contacts {
+    font-size: 0.6rem;
+  }
+  }
   /*# sourceMappingURL=style.css.map */
+
