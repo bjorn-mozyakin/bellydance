@@ -746,7 +746,13 @@ table {
       flex-direction: column; }
 
   .social-buttons {
-    float: none; } }
+    float: none; }
+
+  .teacher .teacher-photo {
+    float: none;
+    text-align: center; }
+  .teacher .teacher-description {
+    margin-left: 0; } }
 @media (max-width: 480px) {
   .contacts {
     font-size: 0.8rem; } }
