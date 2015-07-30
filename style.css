@@ -291,7 +291,22 @@ table {
   border: 0.5px solid #cccccc;
   background: #cccccc;
   border-collapse: separate;
-  border-spacing: 2px; }
+  border-spacing: 2px;
+  /*   .lt-round{
+    border-top-left-radius: 10px;
+  }
+  
+  .rt-round{
+    border-top-right-radius: 10px;
+  }
+  
+  .lb-round{
+    border-bottom-left-radius: 10px;
+  }
+  
+  .rb-round {
+    border-bottom-right-radius: 10px;
+  } */ }
   table th {
     padding: 8px 15px;
     text-align: center;
@@ -304,22 +319,6 @@ table {
     vertical-align: middle;
     background: white;
     background-image: url(images/table-fon.png); }
-  table .lt-round {
-    border-top-left-radius: 10px; }
-  table .rt-round {
-    border-top-right-radius: 10px; }
-  table .lb-round {
-    border-bottom-left-radius: 10px; }
-  table .rb-round {
-    border-bottom-right-radius: 10px; }
-  table.title-top tr:first-child th:first-child {
-    border-top-left-radius: 10px; }
-  table.title-top tr:first-child th:last-child {
-    border-top-right-radius: 10px; }
-  table.title-top tr:last-child td:first-child {
-    border-bottom-left-radius: 10px; }
-  table.title-top tr:last-child td:last-child {
-    border-bottom-right-radius: 10px; }
 
 .more-link {
   display: none;
@@ -461,6 +460,20 @@ table {
 /*
   Pages
 */
+/* Page Shedule and Prices (Расписание и цены) */
+.shedule p {
+  text-align: center;
+  margin-bottom: 0;
+  padding-bottom: 0; }
+.shedule tr:first-child th:first-child {
+  border-top-left-radius: 10px; }
+.shedule tr:first-child th:last-child {
+  border-top-right-radius: 10px; }
+.shedule tr:last-child td:first-child {
+  border-bottom-left-radius: 10px; }
+.shedule tr:last-child td:last-child {
+  border-bottom-right-radius: 10px; }
+
 /* Page Teachers (Преподаватели) */
 .teacher {
   padding-bottom: 10px;
@@ -755,9 +768,15 @@ table {
     margin-left: 0; } }
 @media (max-width: 480px) {
   .contacts {
+    font-size: 0.8rem; }
+
+  .shedule {
     font-size: 0.8rem; } }
 @media (max-width: 390px) {
   .contacts {
+    font-size: 0.6rem; }
+
+  .shedule {
     font-size: 0.6rem; } }
 /*# sourceMappingURL=style.css.map */
 
