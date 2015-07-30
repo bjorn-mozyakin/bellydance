@@ -11,6 +11,7 @@ function handler() {
   }
 
   Question.prototype.onclick = function(e) {
+    e.preventDefault(); //if bid - class of link (not button)
     this.showFormQuestion(e);
     document.querySelector('.form').addEventListener('submit', sendForm);
   }
@@ -55,6 +56,7 @@ function handler() {
   }
 
   Bid.prototype.onclick = function(e) {
+    e.preventDefault(); //if bid - class of link (not button)
     this.showFormBid(e);
     document.querySelector('.form').addEventListener('submit', sendForm);
   }
