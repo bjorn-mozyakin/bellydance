@@ -22,7 +22,7 @@ Template Name: zrak-wp
       <div class="sidebar-primary-reviews-wrapper">
         <div class="sidebar-primary-reviews">
           <h2>Отзывы</h2>
-          <?php $the_query = new WP_Query('category_name=Отзывы&orderby=rand&showposts=1'); ?>
+          <?php $the_query = new WP_Query('category_name=reviews&orderby=rand&showposts=1'); ?>
           <?php while ($the_query->have_posts() ) : $the_query->the_post(); ?>
             <strong><?php the_title(); ?></strong>
             <?php the_content(); ?>

@@ -67,11 +67,15 @@ Version: 1.0
   padding: 0px 0px 90px 0px;
   background: url(images/fon.png) no-repeat right bottom; }
 
+.hello {
+  box-sizing: border-box;
+  float: left;
+  width: 72%;
+  padding-right: 20px; }
+
 .sidebar-primary {
-  position: absolute;
-  right: 0px;
-  top: 0;
-  width: 350px; }
+  float: right;
+  width: 28%; }
   .sidebar-primary .sidebar-primary-halls-wrapper {
     -webkit-transform: rotate(2deg);
     -moz-transform: rotate(2deg);
@@ -80,7 +84,6 @@ Version: 1.0
     transform: rotate(2deg); }
     .sidebar-primary .sidebar-primary-halls-wrapper .sidebar-primary-halls {
       position: relative;
-      width: 310px;
       margin-bottom: 40px;
       padding: 0 20px 10px 20px;
       border-radius: 6px;
@@ -96,8 +99,8 @@ Version: 1.0
         position: absolute;
         left: 10px;
         bottom: 15px;
-        width: 95%;
-        height: 95%;
+        width: 94%;
+        height: 94%;
         z-index: -2;
         -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
         -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
@@ -112,8 +115,8 @@ Version: 1.0
         position: absolute;
         right: 10px;
         bottom: 15px;
-        width: 95%;
-        height: 95%;
+        width: 94%;
+        height: 94%;
         z-index: -2;
         -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
         -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
@@ -141,7 +144,6 @@ Version: 1.0
     transform: rotate(-2deg); }
     .sidebar-primary .sidebar-primary-reviews-wrapper .sidebar-primary-reviews {
       position: relative;
-      width: 310px;
       margin-bottom: 20px;
       padding: 0 20px 10px 20px;
       border-radius: 6px;
@@ -185,30 +187,6 @@ Version: 1.0
         -o-transform: rotate(-2deg);
         transform: rotate(-2deg); }
 
-.sidebar-news-on-main-page {
-  margin-right: 350px; }
-  .sidebar-news-on-main-page ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; }
-    .sidebar-news-on-main-page ul li.widget ul {
-      width: 100%;
-      font-size: 0; }
-      .sidebar-news-on-main-page ul li.widget ul li {
-        box-sizing: border-box;
-        float: left;
-        margin-right: 5%;
-        padding: 10px;
-        border: 1px solid #cccccc;
-        border-radius: 7px;
-        width: 30%;
-        font-size: 1rem; }
-        .sidebar-news-on-main-page ul li.widget ul li:last-child {
-          margin-right: 0; }
-
-.hello {
-  margin-right: 370px; }
-
 #footer {
   box-sizing: border-box;
   position: absolute;
@@ -230,10 +208,7 @@ body {
   /*to push footer to the down border */
   font-family: 'Fira', "Kurale", Times, sans-serif;
   font-size: 16px;
-  color: #444444;
-  background: -webkit-linear-gradient(to left, rgba(170, 170, 170, 0.3), white 5%, white 95%, rgba(170, 170, 170, 0.3));
-  background: -moz-linear-gradient(to left, rgba(170, 170, 170, 0.3), white 5%, white 95%, rgba(170, 170, 170, 0.3));
-  background: linear-gradient(to left, rgba(170, 170, 170, 0.3), white 5%, white 95%, rgba(170, 170, 170, 0.3)); }
+  color: #444444; }
 
 p {
   text-align: justify; }
@@ -686,42 +661,60 @@ button.button {
     .hall div.hall-title {
       border-bottom: 2px solid #cccccc; }
 
+/* Media queries */
+@media (min-width: 1330px) {
+  background: -webkit-linear-gradient(to top, rgba(170, 170, 170, 0.3), white 5%, white 95%, rgba(170, 170, 170, 0.3));
+  background: -moz-linear-gradient(to top, rgba(170, 170, 170, 0.3), white 5%, white 95%, rgba(170, 170, 170, 0.3));
+  background: linear-gradient(to top, rgba(170, 170, 170, 0.3), white 5%, white 95%, rgba(170, 170, 170, 0.3)); }
+@media (max-width: 1200px) {
+  .hello {
+    width: 70%; }
+
+  .sidebar-primary {
+    width: 30%; } }
+@media (max-width: 1100px) {
+  .hello {
+    width: 67%; }
+
+  .sidebar-primary {
+    width: 33%; } }
 @media (max-width: 980px) {
   .main-menu ul li {
     padding-top: 10px; }
 
+  .hello {
+    float: none;
+    width: 100%;
+    padding-right: 0; }
+
   .sidebar-primary {
-    position: static;
+    float: none;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-    width: 100%; }
+    justify-content: space-around; }
     .sidebar-primary .sidebar-primary-halls-wrapper {
+      width: 45%;
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
       -o-transform: rotate(0deg);
       transform: rotate(0deg); }
     .sidebar-primary .sidebar-primary-reviews-wrapper {
+      width: 45%;
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
       -o-transform: rotate(0deg);
-      transform: rotate(0deg); }
-
-  .hello {
-    margin-right: 0; } }
+      transform: rotate(0deg); } }
 @media (max-width: 880px) {
   .phone .text {
     display: none; } }
 @media (max-width: 780px) {
-  .sidebar-primary {
-    display: block;
+  .sidebar-primary .sidebar-primary-halls-wrapper {
     width: 100%; }
-    .sidebar-primary .sidebar-primary-halls-wrapper .sidebar-primary-halls {
-      width: auto; }
-    .sidebar-primary .sidebar-primary-reviews-wrapper .sidebar-primary-reviews {
-      width: auto; }
+  .sidebar-primary .sidebar-primary-reviews-wrapper {
+    width: 100%; }
 
   .contacts tr:first-child td:last-child {
     display: none; }

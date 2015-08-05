@@ -131,26 +131,39 @@ $colorBlack: rgb(68, 68, 68);
 
 #content {
   //float: left;
-  // width: 65%;
+  //1width: 70%;
   position: relative;
   padding: 0px 0px 90px 0px;
   background: url(images/fon.png) no-repeat right bottom;
   //outline: 1px solid aqua;
 }
 
+.hello {
+  box-sizing: border-box;
+  float: left;
+  width: 72%;
+  padding-right: 20px;
+  //margin-right: 370px;
+  //outline: 1px solid pink;
+}
+
 .sidebar-primary {
-  position: absolute;
-  right: 0px;
-  top: 0;
-  width: 350px;
-  //outline: 1px solid maroon;
+  //position: absolute;
+  //right: 0px;
+  //top: 0;
+  //width: 350px;
+  float: right;
+  width: 28%;
+  //min-width: 350px;
+  //outline: 2px dotted maroon;
 
   .sidebar-primary-halls-wrapper {
     @include transform(2deg);
+    //outline: 2px dotted blue;
 
     .sidebar-primary-halls {
       position:relative;
-      width:310px;
+      //width:310px;
       margin-bottom: 40px;
       padding: 0 20px 10px 20px;
       border-radius: 6px;
@@ -176,8 +189,8 @@ $colorBlack: rgb(68, 68, 68);
         position:absolute;
         left: 10px;
         bottom:15px;
-        width:95%;
-        height:95%;
+        width:94%;
+        height:94%;
         z-index:-2;
         -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
         -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
@@ -191,8 +204,8 @@ $colorBlack: rgb(68, 68, 68);
         position:absolute;
         right:10px;
         bottom:15px;
-        width:95%;
-        height:95%;
+        width:94%;
+        height:94%;
         z-index:-2;
         -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
         -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
@@ -224,11 +237,13 @@ $colorBlack: rgb(68, 68, 68);
   }
 
   .sidebar-primary-reviews-wrapper {
-    @include transform(-2deg);
+    @include transform(-2deg); 
+    //outline: 2px dotted green;
+
 
     .sidebar-primary-reviews {
       position:relative;
-      width:310px;
+      //width:310px;
       margin-bottom: 20px;
       padding: 0 20px 10px 20px;
       border-radius: 6px;
@@ -284,46 +299,6 @@ $colorBlack: rgb(68, 68, 68);
 }
 
 
-.sidebar-news-on-main-page {
-  margin-right: 350px;
-  //outline: 1px solid red;
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-
-    li.widget {
-
-      ul {
-        width: 100%;
-        //outline: 1px solid green;
-        font-size: 0;
-
-        li {
-          box-sizing: border-box;
-          float: left;
-          margin-right: 5%;
-          padding: 10px;
-          border: 1px solid $colorDarkGray;
-          border-radius: 7px;
-          width: 30%;
-          font-size: 1rem;
-
-          &:last-child {
-            margin-right: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
-.hello {
-  //float: left;
-  margin-right: 370px;
-  //outline: 1px solid pink;
-}
 
 #footer {
   //clear: both;
@@ -349,10 +324,6 @@ body {
   font-family: 'Fira', "Kurale", Times, sans-serif;
   font-size: 16px;
   color: $colorBlack;
-  background: -webkit-linear-gradient(to left, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
-  background: -moz-linear-gradient(to left, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
-  background: linear-gradient(to left, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
-  //background: linear-gradient(to left, $colorDarkGray, $colorWhite 2.5%,$colorWhite 97.5%, $colorDarkGray);
 }
 
 p {
@@ -1038,6 +1009,33 @@ button.button {
   }
 }
 
+/* Media queries */
+
+@media (min-width: 1330px) {
+  background: -webkit-linear-gradient(to top, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
+  background: -moz-linear-gradient(to top, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
+  background: linear-gradient(to top, rgba(170, 170, 170, 0.3), $colorWhite 5%, $colorWhite 95%, rgba(170, 170, 170, 0.3));
+  //background: linear-gradient(to left, $colorDarkGray, $colorWhite 2.5%,$colorWhite 97.5%, $colorDarkGray);
+}
+
+@media (max-width: 1200px) {
+  .hello {
+    width: 70%;
+  }
+  .sidebar-primary {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hello {
+    width: 67%;
+  }
+  .sidebar-primary {
+    width: 33%;
+  }
+}
+
 @media (max-width: 980px) {
   .main-menu {
     ul {
@@ -1049,27 +1047,32 @@ button.button {
     }
   }
 
+  .hello {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+
   .sidebar-primary {
-    position: static;
+    //position: static;
+    float: none;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    width: 100%;
+
 
     .sidebar-primary-halls-wrapper {
-      //float: left;
+      width: 45%;
       @include transform(0deg)
     }
 
     .sidebar-primary-reviews-wrapper {
-      //float: left;
+      width: 45%;
       @include transform(0deg)
     }
   }
 
-  .hello {
-    margin-right: 0;
-  }
 }
 
 @media (max-width: 880px) {
@@ -1082,23 +1085,23 @@ button.button {
 
 @media (max-width: 780px) {
   .sidebar-primary {
-    display: block;
-    width: 100%;
+   //display: block;
+    //width: 100%;
     //outline: 1px dotted orange;
 
     .sidebar-primary-halls-wrapper {
+        width: 100%;
+        //outline: 1px solid red;
 
       .sidebar-primary-halls {
-        width: auto;
-        //outline: 1px solid red;
       }
     }
 
     .sidebar-primary-reviews-wrapper {
+        width: 100%;
+        //outline: 1px solid red;
 
       .sidebar-primary-reviews {
-        width: auto;
-        //outline: 1px solid red;
       }
     }
   }
