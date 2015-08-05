@@ -529,19 +529,20 @@ button.button {
 .info-block {
   float: right;
   position: relative;
-  //outline: 1px solid red;
+//  outline: 1px solid red;
 
   .phone {
+    text-align: right;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: bold;
     //outline: 1px dotted green;
 
-  .number {
-    padding-left: 20px;
-    font-size: 1.6rem;
+    .number {
+      padding-left: 20px;
+      font-size: 1.6rem;
+    }
   }
-}
 
   .search {
     float: right;
@@ -1085,26 +1086,19 @@ button.button {
 
 @media (max-width: 780px) {
   .sidebar-primary {
-   //display: block;
-    //width: 100%;
-    //outline: 1px dotted orange;
 
     .sidebar-primary-halls-wrapper {
         width: 100%;
-        //outline: 1px solid red;
-
-      .sidebar-primary-halls {
-      }
     }
 
     .sidebar-primary-reviews-wrapper {
         width: 100%;
-        //outline: 1px solid red;
-
-      .sidebar-primary-reviews {
-      }
     }
   }
+
+  .info-block .search .searchform input[type="search"]:focus {
+    width: 180px;
+  } 
 
   .contacts {
     tr:first-child td:last-child {

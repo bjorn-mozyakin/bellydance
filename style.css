@@ -361,6 +361,7 @@ button.button {
   float: right;
   position: relative; }
   .info-block .phone {
+    text-align: right;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: bold; }
@@ -715,6 +716,9 @@ button.button {
     width: 100%; }
   .sidebar-primary .sidebar-primary-reviews-wrapper {
     width: 100%; }
+
+  .info-block .search .searchform input[type="search"]:focus {
+    width: 180px; }
 
   .contacts tr:first-child td:last-child {
     display: none; }
