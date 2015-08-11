@@ -28,7 +28,7 @@ Template Name: zrak-wp
             <?php the_content(); ?>
           <?php endwhile; ?>
           <?php wp_reset_postdata();?>
-          <p class="more"><a href="">Посмотреть остальные отзывы...</a></p>
+          <p class="more"><a href="http://bellydance-samara.ru/category/reviews/">Посмотреть остальные отзывы...</a></p>
         </div>
       </div>
     </aside>
