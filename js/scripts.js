@@ -11,6 +11,9 @@ function handler() {
   }
 
   Question.prototype.onclick = function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement; //for IE8
+
     e.preventDefault(); //if bid - class of link (not button)
     this.showFormQuestion(e);
     document.querySelector('.form').addEventListener('submit', sendForm);
@@ -56,6 +59,9 @@ function handler() {
   }
 
   Bid.prototype.onclick = function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement; //for IE8
+
     e.preventDefault(); //if bid - class of link (not button)
     this.showFormBid(e);
     document.querySelector('.form').addEventListener('submit', sendForm);
@@ -126,6 +132,9 @@ function handler() {
 
 /* Common functions for Forms BEGIN */
   function sendForm(e){
+    e = e || window.event;
+    var target = e.target || e.srcElement; //for IE8
+
     e.preventDefault(); //STOP default action
 
     var formName = document.querySelector('.form').getAttribute('data-name');
@@ -175,10 +184,13 @@ function handler() {
     }
   }
 
-  Gallery.prototype.onclick = function(e) {
-    if (e.target.tagName != 'A') return;
+  Gallery.prototype.onclick = function(event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement; //for IE8
 
-    this.showImg(e);
+    if (event.target.tagName != 'A') return;
+
+    this.showImg(event);
 
     currentGallery = this;
   }

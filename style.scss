@@ -124,6 +124,7 @@ $colorBlack: rgb(68, 68, 68);
   -webkit-box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
   -moz-box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
   box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
+  background: $colorLightBrown;
   background: -webkit-linear-gradient(to bottom, rgba(210, 195, 158, 0.8), rgba(236, 230, 202, 0.6) 30%);
   background: -moz-linear-gradient(to bottom, rgba(210, 195, 158, 0.8), rgba(236, 230, 202, 0.6) 30%);
   background: linear-gradient(to bottom, rgba(210, 195, 158, 0.8), rgba(236, 230, 202, 0.6) 30%);
@@ -170,7 +171,7 @@ $colorBlack: rgb(68, 68, 68);
       -webkit-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
       -moz-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
       box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
-      background: rgba(255, 255, 255, 1);
+      background: rgb(250, 250, 250);
       background-image:
         url(images/sidebar-fon-left-top.png),
         url(images/sidebar-fon-right-top.png),
@@ -237,7 +238,7 @@ $colorBlack: rgb(68, 68, 68);
   }
 
   .sidebar-primary-reviews-wrapper {
-    @include transform(-2deg); 
+    @include transform(-2deg);
     //outline: 2px dotted green;
 
 
@@ -250,7 +251,7 @@ $colorBlack: rgb(68, 68, 68);
       -webkit-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
       -moz-box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
       box-shadow:0 1px 4px rgba(148, 126, 87, 0.3), 0 0 40px rgba(148, 126, 87, 0.1) inset;
-      background: $colorWhite;
+      background: rgb(250, 250, 250);
       background-image:
         url(images/sidebar-fon-left-top.png),
         url(images/sidebar-fon-right-top.png),
@@ -455,6 +456,7 @@ button.button {
   border: none;
   border-radius: 5px;
   color: $colorBlack;
+  background: $colorLightBrown;
   background: -webkit-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
   background: -moz-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
   background: linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
@@ -859,6 +861,7 @@ button.button {
     text-align: left;
     padding: 10px 25px;
     border-radius: 8px;
+    background: $colorLightBrown;
     background: -webkit-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
     background: -moz-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
     background: linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
@@ -1066,7 +1069,7 @@ button.button {
 
       li:nth-child(3) {
         -webkit-flex-basis: 30%;
-      } 
+      }
 
       li:nth-child(7) {
         -webkit-flex-basis: 47%;
@@ -1124,7 +1127,7 @@ button.button {
 
   .info-block .search .searchform input[type="search"]:focus {
     width: 180px;
-  } 
+  }
 
   .contacts {
     tr:first-child td:last-child {
@@ -1156,7 +1159,7 @@ button.button {
 @media (max-width: 680px) {
   .main-menu {
     margin-top: 10px;
-    
+
     ul {
       flex-direction: column;
     }
