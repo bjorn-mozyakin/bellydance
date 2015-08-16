@@ -17,7 +17,8 @@ if($_POST['submit'] == 'question') {
           ';
 
   // $to - кому отправляем
-  $to = 'rakov.di@gmail.com';
+  $email = array('n.a.bondarenko@yandex.ru', 'rakov.di@gmail.com');
+  $to = implode(",", $email);
   // $from - от кого
   $subject='ВОПРОС с сайта bellydance-samara.ru';
   //Дополнительные загловки
@@ -56,7 +57,8 @@ if($_POST['submit'] == 'bid') {
           ';
 
   // $to - кому отправляем
-  $to = 'rakov.di@gmail.com';
+  $email = array('n.a.bondarenko@yandex.ru', 'rakov.di@gmail.com');
+  $to = implode(",", $email);
   // $from - от кого
   $subject='ЗАЯВКА с сайта bellydance-samara.ru';
   //Дополнительные загловки
