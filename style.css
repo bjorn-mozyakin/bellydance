@@ -628,8 +628,13 @@ button.button {
   .reviewes-container .review p {
     margin: 0;
     padding: 10px;
-    border-radius: 7px;
     background: #f4f4f4; }
+    .reviewes-container .review p:first-child {
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px; }
+    .reviewes-container .review p:last-child {
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px; }
 .reviewes-container .review:last-child {
   border-bottom: none; }
   .reviewes-container .review:last-child:after {

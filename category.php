@@ -14,14 +14,16 @@ Template Name: zrak-wp
     <?php endif; ?>
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-      <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-      <p class="article-info"><img src="<?php bloginfo('template_url'); ?>/images/icons/date.png" /> <?php the_time('j F Y'); ?></p>
       <?php if (is_category('Новости')) : ?>
+        <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+        <p class="article-info"><img src="<?php bloginfo('template_url'); ?>/images/icons/date.png" /> <?php the_time('j F Y'); ?></p>
         <p><?php the_post_thumbnail(); ?></p>
         <?php the_content(); ?>
         <p class="tags"><?php the_tags(); ?></p>
         <p><a href="<?php the_permalink() ?>">Подробнее...</a></p>
       <?php elseif (is_category('Отзывы')) : ?>
+        <h2><?php the_title(); ?></h2>
+        <p class="article-info"><img src="<?php bloginfo('template_url'); ?>/images/icons/date.png" /> <?php the_time('j F Y'); ?></p>
         <div class="review"><?php the_content(); ?></div>
       <?php endif; ?>
       <?php endwhile; else: ?>

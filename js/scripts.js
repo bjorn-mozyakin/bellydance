@@ -94,6 +94,7 @@ function handler() {
           <option>ул. Пушкина, 280 (клуб "Планета детства")</option> \
           <option>ул. Стара-Загора, 164 (клуб "Планета детства")</option> \
           <option>пр-т. Металлургов, 75 (ДК Металлург)</option> \
+          <option>ул. Степана Разина, 174 (клуб "Планета детства")</option> \
         </select> \
         <label for="date">Выберите желаемую дату начала занятий</label> \
         <input id="date" type="date" name="date"> \
@@ -115,15 +116,15 @@ function handler() {
       var halls = bid.elements.halls;
 
       halls.selectedIndex = -1;
-      halls.options[2].style.display = halls.options[4].style.display = "";
+      halls.options[2].style.display = halls.options[5].style.display = "";
 
       if (this.selectedIndex == 0) {
         halls.selectedIndex = -1;
-        halls.options[2].style.display = halls.options[4].style.display = "";
+        halls.options[2].style.display = halls.options[5].style.display = "";
       }
 
       if (this.selectedIndex == 2) {
-        halls.options[2].style.display = halls.options[4].style.display = "none";
+        halls.options[2].style.display = halls.options[5].style.display = "none";
       }
     }
   }
