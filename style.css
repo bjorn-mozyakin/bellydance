@@ -507,6 +507,7 @@ button.button {
   width: 100%;
   height: 100%;
   text-align: center;
+  background: black;
   background-color: rgba(0, 0, 0, 0.5); }
   .fogging:before {
     content: '';
@@ -569,6 +570,7 @@ button.button {
     text-align: left;
     padding: 10px 25px;
     border-radius: 8px;
+    border: 0.5px solid silver;
     background: #ece6ca;
     background: -webkit-linear-gradient(to top, #d2c39e, #ece6ca);
     background: -moz-linear-gradient(to top, #d2c39e, #ece6ca);
@@ -776,6 +778,7 @@ button.button {
     margin-left: 0; }
 
   .fogging .form {
+    font-size: 12px;
     font-size: 0.8rem;
     padding: 10px 15px; }
     .fogging .form h2 {
@@ -812,6 +815,7 @@ button.button {
     font-size: 0.6rem; }
 
   .fogging .form {
+    font-size: 10px;
     font-size: 0.6rem;
     padding: 8px 12px; }
     .fogging .form h2 {

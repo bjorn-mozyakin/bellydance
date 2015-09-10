@@ -770,6 +770,7 @@ button.button {
   width: 100%;
   height: 100%;
   text-align: center;
+  background: black;
   background-color: rgba(0, 0, 0, 0.5);
 
   &:before {
@@ -862,6 +863,7 @@ button.button {
     text-align: left;
     padding: 10px 25px;
     border-radius: 8px;
+    border: 0.5px solid silver;
     background: $colorLightBrown;
     background: -webkit-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
     background: -moz-linear-gradient(to top, $colorMiddleBrown, $colorLightBrown);
@@ -1199,6 +1201,7 @@ button.button {
 
   .fogging {
     .form {
+      font-size: 12px;
       font-size: 0.8rem;
       padding: 10px 15px;
 
@@ -1257,6 +1260,7 @@ button.button {
 
   .fogging {
     .form {
+      font-size: 10px;
       font-size: 0.6rem;
       padding: 8px 12px;
 
