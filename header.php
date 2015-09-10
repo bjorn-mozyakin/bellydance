@@ -16,14 +16,16 @@
 <?php wp_head(); ?>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
   <!-- Imitation media quieries for IE9- -->
   <!--[if lte IE 9]>
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/style-ie.css" />
   <script src="<?php bloginfo('template_url'); ?>/js/respond.min.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/html5shiv.js"></script>
   <script src="//cdn.polyfill.io/v1/polyfill.min.js"></script>
   <![endif]-->
 
-<script src="<?php bloginfo('template_url'); ?>/js/scripts.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/scripts-jq.js"></script>
 
 <!-- Google Analytics BEGIN -->
 <script>
